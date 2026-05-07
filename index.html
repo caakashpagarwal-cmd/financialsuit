@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CA Financial Suite — Maars & Associates, Chartered Accountants</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--ink:#0f0e0b;--paper:#f5f2eb;--cream:#ede9df;--accent:#c4622d;--green:#1a6b3c;--blue:#185FA5;--amber:#b45309;--red:#a32d2d;--muted:#7a7670;--border:rgba(15,14,11,0.12);--card:#ffffff;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;}
+/* HEADER */
+header{background:var(--ink);color:var(--paper);padding:1.6rem 2rem 1.4rem;position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;top:-50px;right:-50px;width:240px;height:240px;border-radius:50%;background:var(--accent);opacity:0.13;}
+.hi{max-width:1040px;margin:0 auto;position:relative;z-index:1;}
+.br{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.8rem;margin-bottom:1.1rem;}
+.bl p.fn{font-family:'DM Serif Display',serif;font-size:1.35rem;color:var(--paper);line-height:1.2;margin-bottom:1px;}
+.bl p.ca{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);}
+.brr{text-align:right;}.brr p.nm{font-size:13px;color:rgba(245,242,235,.85);font-weight:500;margin-bottom:1px;}
+.brr p.ph{font-family:'DM Mono',monospace;font-size:11px;color:rgba(245,242,235,.5);}
+.nr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.nr label{font-size:10px;color:rgba(245,242,235,.5);white-space:nowrap;text-transform:uppercase;letter-spacing:.08em;}
+.hw{position:relative;}.hw::after{content:'';position:absolute;right:11px;top:50%;transform:translateY(-50%);border:4px solid transparent;border-top-color:var(--accent);pointer-events:none;}
+.hs{padding:8px 30px 8px 12px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--paper);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:8px;outline:none;cursor:pointer;appearance:none;transition:background .15s;}
+.hs:hover{background:rgba(255,255,255,.16);}
+.hs option{background:#1a1914;color:var(--paper);}
+.hbadge{font-size:10px;font-family:'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:rgba(196,98,45,.15);border:1px solid rgba(196,98,45,.3);border-radius:5px;padding:3px 9px;white-space:nowrap;}
+/* MAIN */
+main{max-width:1040px;margin:0 auto;padding:1.6rem 1.5rem 4rem;}
+.cp{display:none;animation:fi .2s ease;}
+.cp.active{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+/* LAYOUT */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-bottom:1.3rem;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.3rem;margin-bottom:1.3rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;margin-bottom:1.3rem;}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr;}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:1.3rem;}
+.cf{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:1.3rem;margin-bottom:1.3rem;}
+.st{font-family:'DM Serif Display',serif;font-size:.98rem;color:var(--ink);margin-bottom:.9rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+/* RESULT CARDS */
+.rg{display:grid;gap:.8rem;margin-bottom:1.3rem;}
+.r2{grid-template-columns:repeat(2,1fr)}.r3{grid-template-columns:repeat(3,1fr)}.r4{grid-template-columns:repeat(4,1fr)}.r5{grid-template-columns:repeat(5,1fr)}.r6{grid-template-columns:repeat(6,1fr)}
+@media(max-width:560px){.r2,.r3,.r4,.r5,.r6{grid-template-columns:1fr 1fr;}}
+.rc{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:.85rem .95rem;}
+.rc.feat{background:var(--ink);border-color:var(--ink);}
+.rc.grn{background:#e8f5ee;border-color:#a8d5bc;}
+.rc.wrn{background:#fef3c7;border-color:#fcd34d;}
+.rc.blu{background:#e6f1fb;border-color:#b5d4f4;}
+.rc.red{background:#fbeaea;border-color:#f0aaaa;}
+.rl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:4px;}
+.rc.feat .rl{color:rgba(245,242,235,.45);}
+.rc.grn .rl{color:var(--green);}
+.rc.wrn .rl{color:var(--amber);}
+.rc.blu .rl{color:var(--blue);}
+.rc.red .rl{color:var(--red);}
+.rv{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--ink);line-height:1.1;}
+.rc.feat .rv{color:var(--paper);font-size:1.55rem;}
+.rc.grn .rv{color:var(--green);}
+.rc.wrn .rv{color:var(--amber);}
+.rc.blu .rv{color:var(--blue);}
+.rc.red .rv{color:var(--red);}
+.ra .rv{color:var(--accent);}
+.rs{font-size:10px;color:var(--muted);margin-top:2px;}
+.rc.feat .rs{color:rgba(245,242,235,.4);}
+.rc.grn .rs{color:#2d8a55;}
+/* CONTROLS */
+.cr{margin-bottom:.95rem;}
+.cr:last-child{margin-bottom:0;}
+.cl{font-size:11px;color:var(--muted);margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:.05em;}
+input[type=range]{-webkit-appearance:none;width:100%;height:4px;background:var(--cream);border-radius:2px;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--accent);cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1px var(--accent);}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--accent);cursor:pointer;border:3px solid #fff;}
+.iu{display:flex;align-items:center;background:var(--cream);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:6px;transition:border-color .15s;}
+.iu:focus-within{border-color:var(--accent);}
+.iup{padding:7px 8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);background:rgba(0,0,0,.04);border-right:1px solid var(--border);white-space:nowrap;user-select:none;}
+.iup.s{border-right:none;border-left:1px solid var(--border);}
+.mi{flex:1;border:none;background:transparent;padding:7px 8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink);outline:none;width:100%;min-width:0;}
+.mi::placeholder{color:var(--muted);opacity:.6;}
+select.fi{width:100%;padding:8px 28px 8px 10px;font-family:'DM Sans',sans-serif;font-size:13px;background:var(--cream);color:var(--ink);border:1px solid var(--border);border-radius:8px;outline:none;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23c4622d' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;}
+input[type=date]{width:100%;padding:7px 10px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:var(--cream);border:1px solid var(--border);border-radius:8px;outline:none;cursor:pointer;}
+input[type=date]:focus{border-color:var(--accent);}
+.tt{display:flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:6px;}
+.tb{flex:1;padding:6px 8px;font-size:12px;font-family:'DM Sans',sans-serif;background:transparent;border:none;cursor:pointer;color:var(--muted);transition:all .15s;}
+.tb.on{background:var(--accent);color:#fff;font-weight:600;}
+.svt{display:grid;gap:4px;margin-bottom:.9rem;}
+.svt.c2{grid-template-columns:1fr 1fr;}
+.svt.c4{grid-template-columns:repeat(4,1fr);}
+.svb{padding:6px 4px;font-size:11px;font-family:'DM Sans',sans-serif;background:var(--cream);border:1px solid var(--border);border-radius:6px;cursor:pointer;color:var(--muted);transition:all .15s;text-align:center;}
+.svb.on{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600;}
+/* BARS */
+.bbar{height:7px;border-radius:3px;background:var(--cream);overflow:hidden;margin:.8rem 0 .3rem;}
+.bbf{height:100%;background:var(--accent);border-radius:3px;transition:width .4s;}
+.bbl{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);}
+.bbl span:last-child{color:var(--accent);}
+/* CHART */
+.cw{position:relative;width:100%;height:230px;}
+/* FORMULA */
+.fbox{background:var(--cream);border-radius:9px;padding:.75rem 1rem;margin-top:1.2rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;}
+.fl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;}
+.ft{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink);font-weight:500;}
+.flv{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);margin-left:auto;white-space:nowrap;}
+/* TABLE */
+.thr{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:.8rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+.tt2{font-family:'DM Serif Display',serif;font-size:.98rem;color:var(--ink);margin:0;}
+.tc{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.tc span{font-size:10px;color:var(--muted);white-space:nowrap;}
+.tc select.fi{width:auto;padding:4px 24px 4px 8px;font-size:11px;border-radius:6px;}
+.bxl{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;font-size:11px;font-family:'DM Sans',sans-serif;font-weight:600;color:var(--green);background:#e8f5ee;border:1px solid #a8d5bc;border-radius:6px;cursor:pointer;white-space:nowrap;transition:background .15s;}
+.bxl:hover{background:#d2eddf;}
+.tw{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:11.5px;}
+th{text-align:left;padding:6px 8px;color:var(--muted);font-weight:500;font-size:9px;text-transform:uppercase;letter-spacing:.07em;border-bottom:1px solid var(--border);}
+th.r,td.r{text-align:right;}
+td{padding:5px 8px;border-bottom:1px solid rgba(15,14,11,.05);}
+tr:nth-child(even) td{background:var(--cream);}
+td.g{color:var(--green);}td.rd{color:var(--red);}td.ac{color:var(--accent);}td.am{color:var(--amber);}td.bl{color:var(--blue);}
+/* MISC */
+.mbadge{display:inline-block;font-size:9px;font-family:'DM Mono',monospace;color:var(--amber);background:#fef3c7;border:1px solid #fcd34d;border-radius:3px;padding:1px 4px;margin-left:3px;vertical-align:middle;}
+.nt{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5;}
+.infobox{background:var(--cream);border-radius:9px;padding:.75rem 1rem;margin-bottom:1.1rem;font-size:11.5px;color:var(--muted);line-height:1.6;}
+.infobox strong{color:var(--ink);}
+.cmp{width:100%;border-collapse:collapse;font-size:12px;margin-top:.8rem;}
+.cmp th{background:var(--ink);color:var(--paper);padding:8px 10px;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;}
+.cmp td{padding:7px 10px;border-bottom:1px solid var(--border);}
+.cmp tr:nth-child(even) td{background:var(--cream);}
+.cmp .win{font-weight:700;color:var(--green);}
+.kv{display:flex;justify-content:space-between;align-items:center;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:12px;}
+.kv span{color:var(--muted);}
+/* Ratio bars */
+.rb{display:flex;align-items:center;gap:8px;margin:.4rem 0;}
+.rb-label{font-size:11px;color:var(--muted);width:160px;flex-shrink:0;}
+.rb-track{flex:1;height:10px;background:var(--cream);border-radius:5px;overflow:hidden;}
+.rb-fill{height:100%;border-radius:5px;transition:width .4s;}
+.rb-val{font-family:'DM Mono',monospace;font-size:11px;width:70px;text-align:right;flex-shrink:0;}
+.cat-badge{display:inline-block;font-size:9px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:20px;vertical-align:middle;margin-left:4px;}
+/* Depreciation specific */
+.dep-bar{display:flex;flex-direction:column;gap:5px;}
+.dep-row{display:flex;align-items:center;gap:8px;}
+.dep-yr{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);width:50px;text-align:right;flex-shrink:0;}
+.dep-track{flex:1;height:16px;background:var(--cream);border-radius:3px;display:flex;overflow:hidden;}
+.dep-d{height:100%;background:linear-gradient(90deg,var(--accent),#e07845);}
+.dep-w{height:100%;background:var(--blue);opacity:.25;}
+.dep-amt{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);width:90px;text-align:right;flex-shrink:0;}
+footer{text-align:center;padding:1.3rem;font-size:11px;color:var(--muted);border-top:1px solid var(--border);background:var(--cream);}
+</style>
+</head>
+<body>
+<header>
+  <div class="hi">
+    <div class="br">
+      <div class="bl"><p class="fn">Maars &amp; Associates</p><p class="ca">Chartered Accountants</p></div>
+      <div class="brr"><p class="nm">CA Akash Agarwal</p><p class="ph">+91-8799999935</p></div>
+    </div>
+    <div class="nr">
+      <label>Category</label>
+      <div class="hw"><select class="hs" id="catSel" onchange="onCat(this.value)">
+        <option value="loan">Loan &amp; Credit</option>
+        <option value="invest">Investment &amp; Returns</option>
+        <option value="tax">Tax &amp; Compliance</option>
+        <option value="biz">Business &amp; Advisory</option>
+        <option value="msme">MSME &amp; Analytics</option>
+        <option value="stock">Stock &amp; Trading</option>
+      </select></div>
+      <label>Calculator</label>
+      <div class="hw"><select class="hs" id="calcSel" onchange="sw(this.value)"></select></div>
+      <span class="hbadge" id="badge">Loan EMI</span>
+    </div>
+  </div>
+</header>
+<main>
+
+<!-- ===== LOAN & CREDIT ===== -->
+<!-- 1. LOAN EMI -->
+<div class="cp active" id="panel-emi">
+  <div class="rg r5"><div class="rc feat"><p class="rl">Monthly EMI</p><p class="rv" id="emi-emi">₹0</p><p class="rs">after moratorium</p></div><div class="rc"><p class="rl">Total payment</p><p class="rv" id="emi-total">₹0</p><p class="rs" id="emi-ts"></p></div><div class="rc ra"><p class="rl">Total interest</p><p class="rv" id="emi-int">₹0</p><p class="rs" id="emi-ip"></p></div><div class="rc wrn"><p class="rl">Moratorium interest</p><p class="rv" id="emi-mint">₹0</p><p class="rs" id="emi-ms"></p></div><div class="rc grn"><p class="rl">Loan closure</p><p class="rv" id="emi-cd" style="font-size:.95rem;">—</p><p class="rs" id="emi-cs"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Loan Parameters</p>
+      <div class="cr"><label class="cl">Loan amount</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="emi-lT" value="500000" min="1"></div><input type="range" id="emi-l" min="10000" max="10000000" step="10000" value="500000"></div>
+      <div class="cr"><label class="cl">Annual interest rate</label><div class="iu"><input class="mi" type="number" id="emi-rT" value="8.5" min="0.1" max="30" step="0.1"><span class="iup s">%</span></div><input type="range" id="emi-r" min="1" max="24" step="0.1" value="8.5"></div>
+      <div class="cr"><label class="cl">Loan tenure</label><div class="tt"><button class="tb on" id="emi-yb" onclick="setTM('y')">Years</button><button class="tb" id="emi-mb" onclick="setTM('m')">Months</button></div><div class="iu"><input class="mi" type="number" id="emi-tT" value="20" min="1"><span class="iup s" id="emi-tu">years</span></div><input type="range" id="emi-t" min="1" max="30" step="1" value="20"></div>
+      <div class="bbar"><div class="bbf" id="emi-bf" style="width:50%"></div></div><div class="bbl"><span id="emi-b1">Principal</span><span id="emi-b2">Interest</span></div>
+    </div>
+    <div class="card"><p class="st">Schedule Settings</p>
+      <div class="cr"><label class="cl">Disbursement date</label><input type="date" id="emi-dis"></div>
+      <div class="cr"><label class="cl">Moratorium (interest-only months)</label><div class="iu"><input class="mi" type="number" id="emi-moT" value="0" min="0" max="60"><span class="iup s">months</span></div><input type="range" id="emi-mo" min="0" max="36" step="1" value="0"><p class="nt">Interest accrues on principal — no repayment during moratorium.</p></div>
+      <div class="cr"><label class="cl">First EMI date</label><input type="date" id="emi-st"></div>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:1.3rem"><p class="st">Year-wise breakdown</p><div class="cw"><canvas id="emi-ch"></canvas></div></div>
+  <div class="cf"><div class="thr"><p class="tt2">Repayment schedule</p><div class="tc"><span>Show every</span><select class="fi" id="emi-p"><option value="1">Month</option><option value="3">Quarter</option><option value="6">6 months</option><option value="12" selected>Year</option></select><button class="bxl" onclick="dlXL('emi-tb','Repayment_Schedule','emi')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Period</th><th>Date</th><th class="r">Opening bal.</th><th class="r">Payment</th><th class="r">Principal</th><th class="r">Interest</th><th class="r">Closing bal.</th></tr></thead><tbody id="emi-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Formula</span><span class="ft">EMI = P×r×(1+r)ⁿ / ((1+r)ⁿ−1)</span></div>
+</div>
+
+<!-- 2. 4-IN-1 LOAN -->
+<div class="cp" id="panel-4in1">
+  <div class="infobox">Solve for any one unknown — <strong>select what to calculate</strong> below and fill the other three.</div>
+  <div class="rg r4"><div class="rc feat"><p class="rl" id="f4-rl">Result</p><p class="rv" id="f4-rv">—</p><p class="rs" id="f4-rs"></p></div><div class="rc"><p class="rl">Total payment</p><p class="rv" id="f4-tot">₹0</p><p class="rs" id="f4-ts"></p></div><div class="rc ra"><p class="rl">Total interest</p><p class="rv" id="f4-int">₹0</p><p class="rs" id="f4-is"></p></div><div class="rc blu"><p class="rl">Loan APR</p><p class="rv" id="f4-apr">0%</p><p class="rs">incl. processing fees</p></div></div>
+  <div class="cf"><p class="st">Solve for</p>
+    <div class="svt c4"><button class="svb on" id="sv-emi" onclick="sv4('emi')">EMI</button><button class="svb" id="sv-amt" onclick="sv4('amt')">Loan Amount</button><button class="svb" id="sv-ten" onclick="sv4('ten')">Tenure</button><button class="svb" id="sv-rat" onclick="sv4('rat')">Interest Rate</button></div>
+    <div class="g2">
+      <div><div class="cr"><label class="cl">Loan amount (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="f4-a" value="500000"></div></div><div class="cr"><label class="cl">Annual interest rate (%)</label><div class="iu"><input class="mi" type="number" id="f4-r" value="9" step="0.01"><span class="iup s">%</span></div></div></div>
+      <div><div class="cr"><label class="cl">Tenure (months)</label><div class="iu"><input class="mi" type="number" id="f4-n" value="240"></div></div><div class="cr"><label class="cl">EMI amount (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="f4-e" value="4494"></div></div><div class="cr"><label class="cl">Processing fees (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="f4-f" value="0"></div></div></div>
+    </div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Loan payment schedule</p><div class="tc"><span>Show every</span><select class="fi" id="f4-p"><option value="1">Month</option><option value="3">Quarter</option><option value="6">6 months</option><option value="12" selected>Year</option></select><button class="bxl" onclick="dlXL('f4-tb','4in1_Loan_Schedule','4in1')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Period</th><th class="r">Opening bal.</th><th class="r">EMI</th><th class="r">Principal</th><th class="r">Interest</th><th class="r">Closing bal.</th></tr></thead><tbody id="f4-tb"></tbody></table></div></div>
+</div>
+
+<!-- 3. HOME LOAN -->
+<div class="cp" id="panel-home">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Monthly outgo</p><p class="rv" id="hl-m">₹0</p><p class="rs">EMI + expenses</p></div><div class="rc"><p class="rl">EMI (P&amp;I)</p><p class="rv" id="hl-e">₹0</p><p class="rs" id="hl-es"></p></div><div class="rc ra"><p class="rl">Total interest</p><p class="rv" id="hl-i">₹0</p><p class="rs" id="hl-is"></p></div><div class="rc grn"><p class="rl">Total of all payments</p><p class="rv" id="hl-t">₹0</p><p class="rs">incl. down pmt &amp; fees</p></div></div>
+  <div class="g3">
+    <div class="card"><p class="st">Loan Details</p>
+      <div class="cr"><label class="cl">Home value (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="hl-hv" value="5000000" oninput="uHL()"></div></div>
+      <div class="cr"><label class="cl">Down payment (%)</label><div class="iu"><input class="mi" type="number" id="hl-dp" value="20" min="0" max="100" oninput="uHL()"><span class="iup s">%</span></div></div>
+      <div class="cr"><label class="cl">Annual interest rate (%)</label><div class="iu"><input class="mi" type="number" id="hl-r" value="8.5" min="0.1" step="0.1" oninput="uHL()"><span class="iup s">%</span></div></div>
+      <div class="cr"><label class="cl">Tenure (years)</label><div class="iu"><input class="mi" type="number" id="hl-y" value="20" min="1" max="30" oninput="uHL()"><span class="iup s">yrs</span></div></div>
+      <div class="cr"><label class="cl">Processing fee (%)</label><div class="iu"><input class="mi" type="number" id="hl-fee" value="0.5" min="0" step="0.1" oninput="uHL()"><span class="iup s">%</span></div></div>
+    </div>
+    <div class="card"><p class="st">Monthly Expenses</p>
+      <div class="cr"><label class="cl">Property tax (%/yr)</label><div class="iu"><input class="mi" type="number" id="hl-tx" value="0.1" min="0" step="0.05" oninput="uHL()"><span class="iup s">%</span></div></div>
+      <div class="cr"><label class="cl">Home insurance (%/yr)</label><div class="iu"><input class="mi" type="number" id="hl-hi" value="0.05" min="0" step="0.01" oninput="uHL()"><span class="iup s">%</span></div></div>
+      <div class="cr"><label class="cl">Monthly maintenance (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="hl-ma" value="3000" min="0" oninput="uHL()"></div></div>
+    </div>
+    <div class="card"><p class="st">Prepayments</p>
+      <div class="cr"><label class="cl">Monthly prepayment (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="hl-mp" value="0" min="0" oninput="uHL()"></div></div>
+      <div class="cr"><label class="cl">Quarterly prepayment (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="hl-qp" value="0" min="0" oninput="uHL()"></div></div>
+      <div class="cr"><label class="cl">Annual prepayment (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="hl-ap" value="0" min="0" oninput="uHL()"></div></div>
+      <div class="bbar"><div class="bbf" id="hl-bf" style="width:50%"></div></div><div class="bbl"><span id="hl-b1">Principal</span><span id="hl-b2">Interest</span></div>
+    </div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Home loan repayment schedule</p><div class="tc"><span>Show every</span><select class="fi" id="hl-p"><option value="1">Month</option><option value="3">Quarter</option><option value="6">6 months</option><option value="12" selected>Year</option></select><button class="bxl" onclick="dlXL('hl-tb','Home_Loan_Schedule','home')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Period</th><th class="r">Opening bal.</th><th class="r">Total outgo</th><th class="r">Principal</th><th class="r">Interest</th><th class="r">Prepayment</th><th class="r">Expenses</th><th class="r">Closing bal.</th></tr></thead><tbody id="hl-tb"></tbody></table></div></div>
+</div>
+
+<!-- 4. CREDIT CARD EMI -->
+<div class="cp" id="panel-card">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Monthly EMI</p><p class="rv" id="cc-e">₹0</p><p class="rs">incl. GST on interest</p></div><div class="rc ra"><p class="rl">Total interest</p><p class="rv" id="cc-i">₹0</p><p class="rs" id="cc-is"></p></div><div class="rc wrn"><p class="rl">GST on interest</p><p class="rv" id="cc-g">₹0</p><p class="rs">@ 18%</p></div><div class="rc"><p class="rl">Total outgo / APR</p><p class="rv" id="cc-t">₹0</p><p class="rs" id="cc-a"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Credit Card EMI Parameters</p>
+      <div class="cr"><label class="cl">Transaction amount (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="cc-amt" value="50000" oninput="uCC()"></div></div>
+      <div class="cr"><label class="cl">Annual interest rate (%)</label><div class="iu"><input class="mi" type="number" id="cc-r" value="24" step="0.1" oninput="uCC()"><span class="iup s">%</span></div></div>
+      <div class="cr"><label class="cl">Tenure (months)</label><div class="iu"><input class="mi" type="number" id="cc-n" value="6" min="1" max="60" oninput="uCC()"><span class="iup s">months</span></div></div>
+      <div class="cr"><label class="cl">Processing fee (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="cc-f" value="499" min="0" oninput="uCC()"></div></div>
+      <div class="infobox" style="margin-top:1rem;margin-bottom:0">GST @ 18% is levied on interest and processing fees as per RBI norms.</div>
+    </div>
+    <div class="card"><p class="st">Payment summary</p><div id="cc-sum"></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Credit card EMI schedule</p><div class="tc"><button class="bxl" onclick="dlXL('cc-tb','Credit_Card_EMI','card')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Month</th><th class="r">Total payment</th><th class="r">Principal</th><th class="r">Interest</th><th class="r">GST on interest</th><th class="r">Balance</th></tr></thead><tbody id="cc-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">GST</span><span class="ft">18% on each EMI's interest component + processing fee</span></div>
+</div>
+
+<!-- ===== INVESTMENT & RETURNS ===== -->
+<!-- 5. CI -->
+<div class="cp" id="panel-ci">
+  <div class="rg r3"><div class="rc feat"><p class="rl">Final balance</p><p class="rv" id="ci-f">₹0</p><p class="rs" id="ci-m"></p></div><div class="rc ra"><p class="rl">Interest earned</p><p class="rv" id="ci-i">₹0</p><p class="rs" id="ci-ip"></p></div><div class="rc"><p class="rl">Principal invested</p><p class="rv" id="ci-p2">₹0</p><p class="rs" id="ci-pp"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Parameters</p>
+      <div class="cr"><label class="cl">Principal</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ci-pT" value="10000"></div><input type="range" id="ci-p" min="1000" max="1000000" step="1000" value="10000"></div>
+      <div class="cr"><label class="cl">Annual rate</label><div class="iu"><input class="mi" type="number" id="ci-rT" value="8" min="0.1" max="100" step="0.1"><span class="iup s">%</span></div><input type="range" id="ci-r" min="1" max="25" step="0.5" value="8"></div>
+      <div class="cr"><label class="cl">Time period</label><div class="iu"><input class="mi" type="number" id="ci-tT" value="20" min="1" max="100"><span class="iup s">years</span></div><input type="range" id="ci-t" min="1" max="50" step="1" value="20"></div>
+      <div class="cr"><label class="cl">Compounding</label><select class="fi" id="ci-n"><option value="1">Annually</option><option value="2">Semi-annually</option><option value="4">Quarterly</option><option value="12" selected>Monthly</option><option value="365">Daily</option></select></div>
+      <div class="bbar"><div class="bbf" id="ci-bf" style="width:30%"></div></div><div class="bbl"><span id="ci-b1">Principal</span><span id="ci-b2">Interest</span></div>
+    </div>
+    <div class="card"><p class="st">Growth over time</p><div class="cw"><canvas id="ci-ch"></canvas></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2" id="ci-tt">Year-by-year breakdown</p><div class="tc"><span>Show every</span><select class="fi" id="ci-per"><option value="daily">Daily</option><option value="monthly">Monthly</option><option value="0.25">Quarter</option><option value="0.5">Half-year</option><option value="1" selected>Year</option><option value="2">2 years</option><option value="5">5 years</option><option value="10">10 years</option></select><button class="bxl" onclick="dlXL('ci-tb','ci-tt','ci')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th id="ci-t1">Period</th><th class="r">Balance</th><th class="r" id="ci-t2">Interest this period</th><th class="r">Total interest</th></tr></thead><tbody id="ci-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Formula</span><span class="ft">A = P×(1+r/n)^(n×t)</span><span class="flv" id="ci-fv"></span></div>
+</div>
+
+<!-- 6. SI -->
+<div class="cp" id="panel-si">
+  <div class="rg r3"><div class="rc feat"><p class="rl">Total amount</p><p class="rv" id="si-t">₹0</p><p class="rs" id="si-m"></p></div><div class="rc ra"><p class="rl">Simple interest</p><p class="rv" id="si-i">₹0</p><p class="rs" id="si-ip"></p></div><div class="rc"><p class="rl">Principal</p><p class="rv" id="si-p2">₹0</p><p class="rs" id="si-pp"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Parameters</p>
+      <div class="cr"><label class="cl">Principal</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="si-pT" value="50000"></div><input type="range" id="si-p" min="1000" max="1000000" step="1000" value="50000"></div>
+      <div class="cr"><label class="cl">Annual rate</label><div class="iu"><input class="mi" type="number" id="si-rT" value="7" min="0.1" max="100" step="0.1"><span class="iup s">%</span></div><input type="range" id="si-r" min="1" max="25" step="0.5" value="7"></div>
+      <div class="cr"><label class="cl">Time period</label><div class="iu"><input class="mi" type="number" id="si-tT" value="5" min="1" max="100"><span class="iup s">years</span></div><input type="range" id="si-t" min="1" max="30" step="1" value="5"></div>
+      <div class="bbar"><div class="bbf" id="si-bf" style="width:60%"></div></div><div class="bbl"><span id="si-b1">Principal</span><span id="si-b2">Interest</span></div>
+    </div>
+    <div class="card"><p class="st">Growth over time</p><div class="cw"><canvas id="si-ch"></canvas></div></div>
+  </div>
+  <div class="fbox"><span class="fl">Formula</span><span class="ft">SI = P×R×T/100 | A = P+SI</span><span class="flv" id="si-fv"></span></div>
+</div>
+
+<!-- 7. SIP -->
+<div class="cp" id="panel-sip">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Maturity value</p><p class="rv" id="sip-m">₹0</p><p class="rs" id="sip-mx"></p></div><div class="rc"><p class="rl">Total invested</p><p class="rv" id="sip-i">₹0</p><p class="rs" id="sip-is"></p></div><div class="rc ra"><p class="rl">Wealth gained</p><p class="rv" id="sip-g">₹0</p><p class="rs" id="sip-gp"></p></div><div class="rc grn"><p class="rl">Abs. return</p><p class="rv" id="sip-a">0%</p><p class="rs">on invested</p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">SIP Parameters</p>
+      <div class="cr"><label class="cl">Monthly investment</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sip-mT" value="5000"></div><input type="range" id="sip-m2" min="500" max="100000" step="500" value="5000"></div>
+      <div class="cr"><label class="cl">Expected annual return</label><div class="iu"><input class="mi" type="number" id="sip-rT" value="12" min="0.1" max="50" step="0.1"><span class="iup s">%</span></div><input type="range" id="sip-r" min="1" max="30" step="0.5" value="12"></div>
+      <div class="cr"><label class="cl">Investment period</label><div class="iu"><input class="mi" type="number" id="sip-tT" value="15" min="1" max="50"><span class="iup s">years</span></div><input type="range" id="sip-t" min="1" max="40" step="1" value="15"></div>
+      <div class="bbar"><div class="bbf" id="sip-bf" style="width:40%"></div></div><div class="bbl"><span id="sip-b1">Invested</span><span id="sip-b2">Gains</span></div>
+    </div>
+    <div class="card"><p class="st">Corpus growth</p><div class="cw"><canvas id="sip-ch"></canvas></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">SIP growth breakdown</p><div class="tc"><span>Show every</span><select class="fi" id="sip-p"><option value="1">Month</option><option value="3">Quarter</option><option value="6">6 months</option><option value="12" selected>Year</option></select><button class="bxl" onclick="dlXL('sip-tb','SIP_Growth','sip')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Period</th><th class="r">Invested so far</th><th class="r">Gains</th><th class="r">Portfolio value</th></tr></thead><tbody id="sip-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Formula</span><span class="ft">M = P×((1+i)ⁿ−1)/i×(1+i)</span></div>
+</div>
+
+<!-- 8. SWP -->
+<div class="cp" id="panel-swp">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Corpus lasts</p><p class="rv" id="swp-d">—</p><p class="rs" id="swp-ds"></p></div><div class="rc"><p class="rl">Total withdrawn</p><p class="rv" id="swp-w">₹0</p><p class="rs" id="swp-ws"></p></div><div class="rc ra"><p class="rl">Returns earned</p><p class="rv" id="swp-r">₹0</p><p class="rs">while withdrawing</p></div><div class="rc grn"><p class="rl">Final corpus</p><p class="rv" id="swp-f">₹0</p><p class="rs" id="swp-fs"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">SWP Parameters</p>
+      <div class="cr"><label class="cl">Initial corpus (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="swp-c" value="5000000" oninput="uSWP()"></div></div>
+      <div class="cr"><label class="cl">Monthly withdrawal (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="swp-w2" value="30000" oninput="uSWP()"></div></div>
+      <div class="cr"><label class="cl">Expected annual return (%)</label><div class="iu"><input class="mi" type="number" id="swp-rt" value="10" step="0.1" oninput="uSWP()"><span class="iup s">%</span></div></div>
+      <div class="cr"><label class="cl">Projection period (years)</label><div class="iu"><input class="mi" type="number" id="swp-y" value="20" min="1" max="50" oninput="uSWP()"><span class="iup s">years</span></div></div>
+      <p class="nt" id="swp-nt"></p>
+    </div>
+    <div class="card"><p class="st">Corpus depletion</p><div class="cw"><canvas id="swp-ch"></canvas></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">SWP yearly breakdown</p><div class="tc"><button class="bxl" onclick="dlXL('swp-tb','SWP_Schedule','swp')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Year</th><th class="r">Opening corpus</th><th class="r">Returns earned</th><th class="r">Total withdrawn</th><th class="r">Closing corpus</th></tr></thead><tbody id="swp-tb"></tbody></table></div></div>
+</div>
+
+<!-- 9. FD -->
+<div class="cp" id="panel-fd">
+  <div class="rg r3"><div class="rc feat"><p class="rl">Maturity amount</p><p class="rv" id="fd-m">₹0</p><p class="rs" id="fd-mx"></p></div><div class="rc ra"><p class="rl">Interest earned</p><p class="rv" id="fd-i">₹0</p><p class="rs" id="fd-ip"></p></div><div class="rc"><p class="rl">Principal</p><p class="rv" id="fd-p2">₹0</p><p class="rs" id="fd-pp"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">FD Parameters</p>
+      <div class="cr"><label class="cl">Deposit amount</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="fd-pT" value="100000" min="1000"></div><input type="range" id="fd-p" min="1000" max="5000000" step="1000" value="100000"></div>
+      <div class="cr"><label class="cl">Annual interest rate</label><div class="iu"><input class="mi" type="number" id="fd-rT" value="7.1" min="0.1" max="15" step="0.1"><span class="iup s">%</span></div><input type="range" id="fd-r" min="1" max="15" step="0.1" value="7.1"></div>
+      <div class="cr"><label class="cl">Tenure</label><div class="iu"><input class="mi" type="number" id="fd-tT" value="3" min="0.25" max="10" step="0.25"><span class="iup s">years</span></div><input type="range" id="fd-t" min="1" max="10" step="0.25" value="3"></div>
+      <div class="cr"><label class="cl">Compounding</label><select class="fi" id="fd-n"><option value="1">Annually</option><option value="2">Semi-annually</option><option value="4" selected>Quarterly</option><option value="12">Monthly</option></select></div>
+      <div class="bbar"><div class="bbf" id="fd-bf" style="width:70%"></div></div><div class="bbl"><span id="fd-b1">Principal</span><span id="fd-b2">Interest</span></div>
+    </div>
+    <div class="card"><p class="st">FD growth</p><div class="cw"><canvas id="fd-ch"></canvas></div></div>
+  </div>
+  <div class="fbox"><span class="fl">Formula</span><span class="ft">M = P×(1+r/n)^(n×t)</span><span class="flv" id="fd-fv"></span></div>
+</div>
+
+<!-- 10. PPF -->
+<div class="cp" id="panel-ppf">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Maturity value</p><p class="rv" id="ppf-m">₹0</p><p class="rs" id="ppf-mx"></p></div><div class="rc"><p class="rl">Total invested</p><p class="rv" id="ppf-i">₹0</p><p class="rs" id="ppf-is"></p></div><div class="rc ra"><p class="rl">Interest earned</p><p class="rv" id="ppf-in">₹0</p><p class="rs" id="ppf-ip"></p></div><div class="rc grn"><p class="rl">80C benefit/year</p><p class="rv" id="ppf-tx">₹0</p><p class="rs">EEE status</p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">PPF Parameters</p>
+      <div class="cr"><label class="cl">Annual investment (₹, max ₹1.5L)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ppf-a" value="150000" min="500" max="150000" oninput="uPPF()"></div></div>
+      <div class="cr"><label class="cl">Interest rate (%)</label><div class="iu"><input class="mi" type="number" id="ppf-r" value="7.1" min="1" max="15" step="0.1" oninput="uPPF()"><span class="iup s">% p.a.</span></div></div>
+      <div class="cr"><label class="cl">Tenure (years, min 15)</label><div class="iu"><input class="mi" type="number" id="ppf-y" value="15" min="15" max="50" step="5" oninput="uPPF()"><span class="iup s">years</span></div></div>
+      <div class="infobox" style="margin-top:1rem;margin-bottom:0"><strong>PPF:</strong> Min ₹500/Max ₹1.5L p.a. Lock-in 15 yrs (extendable in 5-yr blocks). EEE status — deposit, interest &amp; maturity all tax-free.</div>
+    </div>
+    <div class="card"><p class="st">PPF corpus growth</p><div class="cw"><canvas id="ppf-ch"></canvas></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">PPF year-by-year</p><div class="tc"><button class="bxl" onclick="dlXL('ppf-tb','PPF_Schedule','ppf')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Year</th><th class="r">Opening bal.</th><th class="r">Deposit</th><th class="r">Interest</th><th class="r">Closing bal.</th></tr></thead><tbody id="ppf-tb"></tbody></table></div></div>
+</div>
+
+<!-- 11. ROI/CAGR -->
+<div class="cp" id="panel-roi">
+  <div class="rg r4"><div class="rc feat"><p class="rl">ROI</p><p class="rv" id="roi-r">0%</p><p class="rs">return on investment</p></div><div class="rc ra"><p class="rl">Net profit / loss</p><p class="rv" id="roi-n">₹0</p><p class="rs" id="roi-ns"></p></div><div class="rc grn"><p class="rl">CAGR</p><p class="rv" id="roi-c">0%</p><p class="rs">annualised</p></div><div class="rc"><p class="rl">Final value</p><p class="rv" id="roi-f">₹0</p><p class="rs">current value</p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Investment Parameters</p>
+      <div class="cr"><label class="cl">Initial investment</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="roi-iT" value="100000"></div><input type="range" id="roi-i" min="1000" max="5000000" step="1000" value="100000"></div>
+      <div class="cr"><label class="cl">Final value</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="roi-fT" value="180000"></div><input type="range" id="roi-f2" min="1000" max="10000000" step="1000" value="180000"></div>
+      <div class="cr"><label class="cl">Duration</label><div class="iu"><input class="mi" type="number" id="roi-tT" value="3" min="0.1" max="50" step="0.1"><span class="iup s">years</span></div><input type="range" id="roi-t" min="1" max="30" step="1" value="3"></div>
+      <div class="bbar"><div class="bbf" id="roi-bf" style="width:55%"></div></div><div class="bbl"><span id="roi-b1">Cost</span><span id="roi-b2">Profit</span></div>
+    </div>
+    <div class="card"><p class="st">Value progression</p><div class="cw"><canvas id="roi-ch"></canvas></div></div>
+  </div>
+  <div class="fbox"><span class="fl">ROI</span><span class="ft">(Final−Initial)/Initial×100</span><span class="fl" style="margin-left:12px;">CAGR</span><span class="ft">(Final/Initial)^(1/t)−1</span></div>
+</div>
+
+<!-- ===== TAX & COMPLIANCE ===== -->
+<!-- 12. INCOME TAX -->
+<div class="cp" id="panel-tax">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Best regime</p><p class="rv" id="tax-rec" style="font-size:.9rem;">—</p><p class="rs" id="tax-rs"></p></div><div class="rc grn"><p class="rl">New regime tax</p><p class="rv" id="tax-n">₹0</p><p class="rs" id="tax-ns"></p></div><div class="rc wrn"><p class="rl">Old regime tax</p><p class="rv" id="tax-o">₹0</p><p class="rs" id="tax-os"></p></div><div class="rc blu"><p class="rl">Tax saved</p><p class="rv" id="tax-sv">₹0</p><p class="rs">by choosing best</p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Income Details — FY 2025-26</p>
+      <div class="cr"><label class="cl">Taxpayer category</label><select class="fi" id="tax-cat" onchange="uTax()"><option value="i">Individual (Below 60 yrs)</option><option value="s">Senior Citizen (60-79 yrs)</option><option value="ss">Super Senior (80+ yrs)</option><option value="h">HUF</option></select></div>
+      <div class="cr"><label class="cl">Gross annual income (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-inc" value="1200000" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">HRA exempt u/s 10(13A) (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-hra" value="0" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">LTA exempt u/s 10(5) (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-lta" value="0" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">Other exemptions u/s 10 (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-ex" value="0" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">80C — LIC/PPF/ELSS (max ₹1.5L)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-80c" value="150000" max="150000" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">80CCD(1B) — NPS (max ₹50K)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-nps" value="0" max="50000" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">80D — Health insurance (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-80d" value="25000" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">80D — Parents' insurance (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-80dp" value="0" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">Sec 24(b) — Home loan interest (max ₹2L)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-hl" value="0" max="200000" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">80E — Education loan interest (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-80e" value="0" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">80G — Donations (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-80g" value="0" oninput="uTax()"></div></div>
+      <div class="cr"><label class="cl">80TTA — Savings interest (max ₹10K)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tax-tta" value="0" max="10000" oninput="uTax()"></div></div>
+    </div>
+    <div class="card"><p class="st">Regime comparison</p><div id="tax-cmp"></div><div class="infobox" style="margin-top:1rem;font-size:10.5px;"><strong>New (FY25-26):</strong> 0-4L→0%, 4-8L→5%, 8-12L→10%, 12-16L→15%, 16-20L→20%, 20-24L→25%, 24L+→30%. Std ded ₹75K. Rebate 87A if taxable ≤₹12L.<br><br><strong>Old:</strong> 0-2.5L→0%, 2.5-5L→5%, 5-10L→20%, 10L+→30%. Std ded ₹50K. Rebate 87A if taxable ≤₹5L. All deductions available.</div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Tax computation breakdown</p><div class="tc"><button class="bxl" onclick="dlXL('tax-tb','Income_Tax','tax')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Particulars</th><th class="r">New Regime (₹)</th><th class="r">Old Regime (₹)</th></tr></thead><tbody id="tax-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Note</span><span class="ft">4% Health &amp; Education cess on tax liability. Surcharge for income &gt; ₹50L.</span></div>
+</div>
+
+<!-- 13. TDS -->
+<div class="cp" id="panel-tds">
+  <div class="rg r4"><div class="rc feat"><p class="rl">TDS to deduct</p><p class="rv" id="tds-amt">₹0</p><p class="rs" id="tds-rs"></p></div><div class="rc ra"><p class="rl">Net payment</p><p class="rv" id="tds-net">₹0</p><p class="rs">after TDS</p></div><div class="rc wrn"><p class="rl">Effective TDS rate</p><p class="rv" id="tds-eff">0%</p><p class="rs" id="tds-effs"></p></div><div class="rc blu"><p class="rl">Sec 206AA (no PAN)</p><p class="rv" id="tds-pan">—</p><p class="rs">higher of 20% or double</p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">TDS Parameters</p>
+      <div class="cr"><label class="cl">TDS Section</label><select class="fi" id="tds-sec" onchange="uTDS()">
+        <option value="192">Sec 192 — Salary</option>
+        <option value="193">Sec 193 — Interest on securities</option>
+        <option value="194A">Sec 194A — Interest (banks/others)</option>
+        <option value="194C">Sec 194C — Contractor/sub-contractor</option>
+        <option value="194D">Sec 194D — Insurance commission</option>
+        <option value="194H">Sec 194H — Commission/brokerage</option>
+        <option value="194I">Sec 194I — Rent (P&M/Furniture)</option>
+        <option value="194Ib">Sec 194I — Rent (land/building)</option>
+        <option value="194IA">Sec 194IA — Transfer of immovable property</option>
+        <option value="194IB">Sec 194IB — Rent by individual/HUF</option>
+        <option value="194J">Sec 194J — Professional/technical fees</option>
+        <option value="194N">Sec 194N — Cash withdrawal</option>
+        <option value="194O">Sec 194O — E-commerce</option>
+        <option value="194Q">Sec 194Q — Purchase of goods</option>
+        <option value="195">Sec 195 — Payment to non-resident</option>
+      </select></div>
+      <div class="cr"><label class="cl">Payment / credit amount (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="tds-val" value="100000" oninput="uTDS()"></div></div>
+      <div class="cr"><label class="cl">Deductee type</label><select class="fi" id="tds-dtype" onchange="uTDS()"><option value="ind">Individual / HUF</option><option value="co">Company / Other</option><option value="nri">Non-Resident</option></select></div>
+      <div class="cr"><label class="cl">PAN furnished?</label><select class="fi" id="tds-panf" onchange="uTDS()"><option value="y">Yes</option><option value="n">No — Sec 206AA applies</option></select></div>
+    </div>
+    <div class="card"><p class="st">Section reference</p><div id="tds-ref"></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">TDS computation</p><div class="tc"><button class="bxl" onclick="dlXL('tds-tb','TDS_Calculation','tds')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Particulars</th><th class="r">Amount (₹)</th></tr></thead><tbody id="tds-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Sec 206AA</span><span class="ft">If no PAN: TDS = Higher of (applicable rate × 2) or 20%</span></div>
+</div>
+
+<!-- 14. ADVANCE TAX -->
+<div class="cp" id="panel-adv">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Total tax liability</p><p class="rv" id="adv-tot">₹0</p><p class="rs" id="adv-ts"></p></div><div class="rc ra"><p class="rl">Advance tax payable</p><p class="rv" id="adv-at">₹0</p><p class="rs">net of TDS</p></div><div class="rc wrn"><p class="rl">Int. u/s 234B</p><p class="rv" id="adv-234b">₹0</p><p class="rs">non-payment</p></div><div class="rc red"><p class="rl">Int. u/s 234C</p><p class="rv" id="adv-234c">₹0</p><p class="rs">deferment</p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Advance Tax — FY 2025-26</p>
+      <div class="cr"><label class="cl">Estimated annual income (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="adv-inc" value="1500000" oninput="uAdv()"></div></div>
+      <div class="cr"><label class="cl">Tax regime</label><select class="fi" id="adv-reg" onchange="uAdv()"><option value="new">New Regime (FY 2025-26 default)</option><option value="old">Old Regime</option></select></div>
+      <div class="cr"><label class="cl">Total deductions — old regime (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="adv-ded" value="200000" oninput="uAdv()"></div></div>
+      <div class="cr"><label class="cl">TDS deducted / expected in FY (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="adv-tds" value="0" oninput="uAdv()"></div></div>
+      <div class="infobox" style="margin-top:1rem;font-size:10.5px;margin-bottom:0;"><strong>Schedule:</strong> 15 Jun → 15%; 15 Sep → 45%; 15 Dec → 75%; 15 Mar → 100%. Interest u/s 234C: 1%/month on shortfall. 234B: 1%/month if advance tax &lt; 90% of liability.</div>
+    </div>
+    <div class="card"><p class="st">Interest calculator — Sec 234B &amp; 234C</p>
+      <div class="cr"><label class="cl">Actual / self-assessed tax (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="adv-self" value="0" oninput="uAdv234()"></div></div>
+      <div class="cr"><label class="cl">Total advance tax paid (all quarters) (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="adv-paid" value="0" oninput="uAdv234()"></div></div>
+      <div class="cr"><label class="cl">Months since 31 Mar (for 234B) (₹)</label><div class="iu"><input class="mi" type="number" id="adv-mths" value="0" min="0" max="12" oninput="uAdv234()"><span class="iup s">months</span></div></div>
+    </div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Advance tax installment schedule</p><div class="tc"><button class="bxl" onclick="dlXL('adv-tb','Advance_Tax','adv')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Due Date</th><th class="r">Cumulative % due</th><th class="r">Cumulative tax due (₹)</th><th class="r">Installment (₹)</th></tr></thead><tbody id="adv-tb"></tbody></table></div></div>
+</div>
+
+<!-- 15. GST -->
+<div class="cp" id="panel-gst">
+  <div class="rg r4"><div class="rc feat"><p class="rl">GST amount</p><p class="rv" id="gst-a">₹0</p><p class="rs" id="gst-as"></p></div><div class="rc grn"><p class="rl">Pre-GST amount</p><p class="rv" id="gst-pre">₹0</p></div><div class="rc ra"><p class="rl">Post-GST amount</p><p class="rv" id="gst-post">₹0</p></div><div class="rc blu"><p class="rl">CGST + SGST</p><p class="rv" id="gst-cs">₹0+₹0</p><p class="rs">intra-state split</p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">GST Parameters</p>
+      <div class="cr"><label class="cl">Mode</label><select class="fi" id="gst-m" onchange="uGST()"><option value="add">Add GST to amount</option><option value="rm">Remove GST from amount</option></select></div>
+      <div class="cr"><label class="cl">Amount (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="gst-v" value="10000" oninput="uGST()"></div></div>
+      <div class="cr"><label class="cl">GST rate</label><select class="fi" id="gst-r" onchange="uGST()"><option value="3">3%</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></div>
+    </div>
+    <div class="card"><p class="st">GST breakup</p><div id="gst-sum"></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">GST calculation</p><div class="tc"><button class="bxl" onclick="dlXL('gst-tb','GST_Calculation','gst')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Particulars</th><th class="r">Amount (₹)</th></tr></thead><tbody id="gst-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Add</span><span class="ft">GST = Value × Rate/100</span><span class="fl" style="margin-left:12px;">Remove</span><span class="ft">Original = Value ÷ (1+Rate/100)</span></div>
+</div>
+
+<!-- 16. GST LATE FEE -->
+<div class="cp" id="panel-gstlate">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Total late fee</p><p class="rv" id="gl-fee">₹0</p><p class="rs" id="gl-fees"></p></div><div class="rc wrn"><p class="rl">CGST late fee</p><p class="rv" id="gl-c">₹0</p><p class="rs">50% of total fee</p></div><div class="rc wrn"><p class="rl">SGST late fee</p><p class="rv" id="gl-s">₹0</p><p class="rs">50% of total fee</p></div><div class="rc red"><p class="rl">Interest on tax (18%)</p><p class="rv" id="gl-int">₹0</p><p class="rs" id="gl-is"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">GST Late Fee &amp; Interest Calculator</p>
+      <div class="cr"><label class="cl">Return type</label><select class="fi" id="gl-ret" onchange="uGL()"><option value="3b">GSTR-3B (tax filing)</option><option value="1">GSTR-1 (outward supplies)</option><option value="9">GSTR-9 (annual return)</option></select></div>
+      <div class="cr"><label class="cl">Return period</label><select class="fi" id="gl-per" onchange="uGL()"><option value="m">Monthly</option><option value="q">Quarterly</option></select></div>
+      <div class="cr"><label class="cl">Nil return?</label><select class="fi" id="gl-nil" onchange="uGL()"><option value="n">No — tax payable</option><option value="y">Yes — nil return</option></select></div>
+      <div class="cr"><label class="cl">Tax liability / turnover basis (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="gl-tax" value="50000" oninput="uGL()"></div></div>
+      <div class="cr"><label class="cl">Due date</label><input type="date" id="gl-due" oninput="uGL()"></div>
+      <div class="cr"><label class="cl">Filing date</label><input type="date" id="gl-file" oninput="uGL()"></div>
+    </div>
+    <div class="card"><p class="st">Late fee reference</p><div id="gl-ref"></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Late fee &amp; interest computation</p><div class="tc"><button class="bxl" onclick="dlXL('gl-tb','GST_Late_Fee','gstlate')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Particulars</th><th class="r">Amount (₹)</th></tr></thead><tbody id="gl-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Interest</span><span class="ft">18% p.a. on net tax liability for delay in payment (Sec 50 CGST Act)</span></div>
+</div>
+
+<!-- 17. HRA -->
+<div class="cp" id="panel-hra">
+  <div class="rg r4"><div class="rc feat"><p class="rl">HRA exemption</p><p class="rv" id="hra-e">₹0</p><p class="rs">least of 3 conditions</p></div><div class="rc ra"><p class="rl">Taxable HRA</p><p class="rv" id="hra-t">₹0</p><p class="rs" id="hra-ts"></p></div><div class="rc grn"><p class="rl">Tax saved (30% slab)</p><p class="rv" id="hra-sv">₹0</p><p class="rs">approx. benefit</p></div><div class="rc blu"><p class="rl">Binding condition</p><p class="rv" id="hra-b" style="font-size:.9rem;">—</p><p class="rs">limits exemption</p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">HRA Parameters</p>
+      <div class="cr"><label class="cl">Basic salary / month (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="hra-bas" value="50000" oninput="uHRA()"></div></div>
+      <div class="cr"><label class="cl">DA / month (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="hra-da" value="0" oninput="uHRA()"></div></div>
+      <div class="cr"><label class="cl">Actual HRA received / month (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="hra-act" value="20000" oninput="uHRA()"></div></div>
+      <div class="cr"><label class="cl">Actual rent paid / month (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="hra-rent" value="18000" oninput="uHRA()"></div></div>
+      <div class="cr"><label class="cl">City type</label><select class="fi" id="hra-city" onchange="uHRA()"><option value="50">Metro (50% of Basic+DA)</option><option value="40">Non-metro (40% of Basic+DA)</option></select></div>
+    </div>
+    <div class="card"><p class="st">Three conditions (annual)</p><div id="hra-cond"></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">HRA exemption details</p><div class="tc"><button class="bxl" onclick="dlXL('hra-tb','HRA_Exemption','hra')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Particulars</th><th class="r">Monthly (₹)</th><th class="r">Annual (₹)</th></tr></thead><tbody id="hra-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Exempt = Least of</span><span class="ft">① Actual HRA ② 50/40% of Basic+DA ③ Rent − 10% of Basic+DA</span></div>
+</div>
+
+<!-- ===== BUSINESS & ADVISORY ===== -->
+<!-- 18. DEPRECIATION -->
+<div class="cp" id="panel-dep">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Cost of asset</p><p class="rv" id="dep-cost">₹0</p><p class="rs" id="dep-cs"></p></div><div class="rc ra"><p class="rl">Total depreciation</p><p class="rv" id="dep-tot">₹0</p><p class="rs" id="dep-ts"></p></div><div class="rc"><p class="rl">Closing WDV</p><p class="rv" id="dep-wdv">₹0</p><p class="rs" id="dep-ws"></p></div><div class="rc grn"><p class="rl">Rate applied</p><p class="rv" id="dep-rate" style="font-size:1rem;">—</p><p class="rs" id="dep-rs"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Asset Parameters</p>
+      <div class="cr"><label class="cl">Applicable law</label><select class="fi" id="dep-act" onchange="uDep()"><option value="ca">Companies Act 2013 — Schedule II</option><option value="it">Income Tax Act — Section 32</option></select></div>
+      <div class="cr"><label class="cl">Depreciation method</label><select class="fi" id="dep-mth" onchange="uDep()"><option value="slm">SLM — Straight Line Method</option><option value="wdv">WDV — Written Down Value</option></select></div>
+      <div class="cr" id="dep-cat-row"><label class="cl">Asset category</label><select class="fi" id="dep-cat" onchange="uDep()"></select></div>
+      <div class="cr"><label class="cl">Asset name</label><div class="iu"><input class="mi" type="text" id="dep-name" value="Plant & Machinery" placeholder="e.g. Computer, Vehicle"></div></div>
+      <div class="cr"><label class="cl">Cost of acquisition (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="dep-cst" value="1000000" oninput="uDep()"></div></div>
+      <div class="cr"><label class="cl">Date of acquisition</label><input type="date" id="dep-date" oninput="uDep()"></div>
+      <div class="cr"><label class="cl">Residual / scrap value (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="dep-res" value="50000" oninput="uDep()"></div></div>
+      <div class="cr"><label class="cl">Useful life (years) <span style="font-size:10px;color:var(--muted)">— CA Act only</span></label><div class="iu"><input class="mi" type="number" id="dep-life" value="15" min="1" oninput="uDep()"><span class="iup s">years</span></div></div>
+    </div>
+    <div class="card"><p class="st">Depreciation chart (first 20 years)</p><div id="dep-chart" class="dep-bar" style="margin-top:.5rem;"></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Depreciation schedule</p><div class="tc"><button class="bxl" onclick="dlXL('dep-tb','Depreciation_Schedule','dep')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Year</th><th>Period</th><th class="r">Opening WDV</th><th class="r">Depreciation</th><th class="r">Eff. rate %</th><th class="r">Closing WDV</th><th class="r">Accum. depr.</th></tr></thead><tbody id="dep-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">SLM</span><span class="ft">Dep = (Cost−Residual)/Useful life</span><span class="fl" style="margin-left:12px;">WDV</span><span class="ft">Dep = Opening WDV × Rate%</span></div>
+</div>
+
+<!-- 19. BUSINESS VALUATION -->
+<div class="cp" id="panel-bval">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Valuation (selected method)</p><p class="rv" id="bv-val">₹0</p><p class="rs" id="bv-vs"></p></div><div class="rc grn"><p class="rl">DCF valuation</p><p class="rv" id="bv-dcf">₹0</p><p class="rs">discounted cash flow</p></div><div class="rc blu"><p class="rl">EV/EBITDA valuation</p><p class="rv" id="bv-ev">₹0</p><p class="rs">market multiple</p></div><div class="rc"><p class="rl">Book value / NAV</p><p class="rv" id="bv-bk">₹0</p><p class="rs">net asset value</p></div></div>
+  <div class="infobox"><strong>Multi-method valuation:</strong> Use all three methods and cross-validate for a defensible valuation range. The final value is typically a weighted average or the most appropriate method for the business type.</div>
+  <div class="cf"><p class="st">Select valuation method</p>
+    <div class="svt c4 " style="margin-bottom:1.3rem;"><button class="svb on" id="bvm-dcf" onclick="setBVM('dcf')">DCF Method</button><button class="svb" id="bvm-ev" onclick="setBVM('ev')">EV/EBITDA</button><button class="svb" id="bvm-bk" onclick="setBVM('bk')">Book Value</button></div>
+    <div id="bv-dcf-panel">
+      <div class="g2">
+        <div><div class="cr"><label class="cl">Base year free cash flow (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="bv-fcf" value="2000000" oninput="uBV()"></div></div>
+          <div class="cr"><label class="cl">Revenue growth rate (years 1-5)</label><div class="iu"><input class="mi" type="number" id="bv-gr" value="15" step="0.1" oninput="uBV()"><span class="iup s">%</span></div></div>
+          <div class="cr"><label class="cl">Terminal growth rate</label><div class="iu"><input class="mi" type="number" id="bv-tg" value="5" step="0.1" oninput="uBV()"><span class="iup s">%</span></div></div>
+        </div>
+        <div><div class="cr"><label class="cl">WACC / Discount rate</label><div class="iu"><input class="mi" type="number" id="bv-wacc" value="14" step="0.1" oninput="uBV()"><span class="iup s">%</span></div></div>
+          <div class="cr"><label class="cl">Projection years</label><div class="iu"><input class="mi" type="number" id="bv-yrs" value="5" min="1" max="15" oninput="uBV()"><span class="iup s">years</span></div></div>
+          <div class="cr"><label class="cl">Net debt (₹) — subtract from EV</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="bv-debt" value="0" oninput="uBV()"></div></div>
+        </div>
+      </div>
+    </div>
+    <div id="bv-ev-panel" style="display:none">
+      <div class="g2">
+        <div><div class="cr"><label class="cl">EBITDA (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="bv-ebitda" value="5000000" oninput="uBV()"></div></div>
+          <div class="cr"><label class="cl">EV/EBITDA multiple (sector)</label><div class="iu"><input class="mi" type="number" id="bv-mult" value="8" step="0.1" oninput="uBV()"><span class="iup s">×</span></div></div>
+        </div>
+        <div><div class="cr"><label class="cl">Net debt (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="bv-ev-debt" value="0" oninput="uBV()"></div></div>
+          <div class="cr"><label class="cl">Industry</label><select class="fi" id="bv-ind" onchange="uBV()"><option value="8">Manufacturing (8x)</option><option value="10">Technology (10x)</option><option value="6">Trading (6x)</option><option value="12">FMCG (12x)</option><option value="15">Pharma (15x)</option></select></div>
+        </div>
+      </div>
+    </div>
+    <div id="bv-bk-panel" style="display:none">
+      <div class="g2">
+        <div><div class="cr"><label class="cl">Total assets (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="bv-assets" value="10000000" oninput="uBV()"></div></div>
+          <div class="cr"><label class="cl">Total liabilities (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="bv-liab" value="3000000" oninput="uBV()"></div></div>
+        </div>
+        <div><div class="cr"><label class="cl">Intangibles to exclude (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="bv-intan" value="0" oninput="uBV()"></div></div>
+          <div class="cr"><label class="cl">P/BV multiple</label><div class="iu"><input class="mi" type="number" id="bv-pbv" value="1.5" step="0.1" oninput="uBV()"><span class="iup s">×</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Valuation details</p><div class="tc"><button class="bxl" onclick="dlXL('bv-tb','Business_Valuation','bval')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Particulars</th><th class="r">Amount (₹)</th></tr></thead><tbody id="bv-tb"></tbody></table></div></div>
+</div>
+
+<!-- 20. SALARY STRUCTURING -->
+<div class="cp" id="panel-sal">
+  <div class="rg r4"><div class="rc feat"><p class="rl">CTC</p><p class="rv" id="sal-ctc">₹0</p><p class="rs" id="sal-cs"></p></div><div class="rc grn"><p class="rl">Take-home (new regime)</p><p class="rv" id="sal-nw">₹0</p><p class="rs" id="sal-ns"></p></div><div class="rc wrn"><p class="rl">Take-home (old regime)</p><p class="rv" id="sal-ol">₹0</p><p class="rs" id="sal-os"></p></div><div class="rc blu"><p class="rl">Tax saving (best)</p><p class="rv" id="sal-sv">₹0</p><p class="rs">vs other regime</p></div></div>
+  <div class="g3">
+    <div class="card"><p class="st">Salary Components</p>
+      <div class="cr"><label class="cl">Basic salary / month (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-bas" value="50000" oninput="uSal()"></div></div>
+      <div class="cr"><label class="cl">HRA / month (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-hra" value="20000" oninput="uSal()"></div></div>
+      <div class="cr"><label class="cl">Special allowance / month (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-sp" value="15000" oninput="uSal()"></div></div>
+      <div class="cr"><label class="cl">LTA / year (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-lta" value="30000" oninput="uSal()"></div></div>
+      <div class="cr"><label class="cl">Employer PF contribution / month</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-epf" value="1800" oninput="uSal()"></div></div>
+      <div class="cr"><label class="cl">Gratuity / month</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-grt" value="2404" oninput="uSal()"></div></div>
+      <div class="cr"><label class="cl">Other taxable allowances / month (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-oth" value="0" oninput="uSal()"></div></div>
+    </div>
+    <div class="card"><p class="st">Deductions (Old Regime)</p>
+      <div class="cr"><label class="cl">80C investments (max ₹1.5L)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-80c" value="150000" max="150000" oninput="uSal()"></div></div>
+      <div class="cr"><label class="cl">80CCD(1B) NPS (max ₹50K)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-nps" value="0" max="50000" oninput="uSal()"></div></div>
+      <div class="cr"><label class="cl">80D health insurance (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-80d" value="25000" oninput="uSal()"></div></div>
+      <div class="cr"><label class="cl">HRA exempt (₹/year)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-hrae" value="120000" oninput="uSal()"></div></div>
+      <div class="cr"><label class="cl">Employee PF / month (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="sal-empf" value="1800" oninput="uSal()"></div></div>
+    </div>
+    <div class="card"><p class="st">CTC &amp; Tax summary</p><div id="sal-sum"></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Salary structuring comparison</p><div class="tc"><button class="bxl" onclick="dlXL('sal-tb','Salary_Structure','sal')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Particulars</th><th class="r">Monthly (₹)</th><th class="r">Annual (₹)</th><th class="r">New regime</th><th class="r">Old regime</th></tr></thead><tbody id="sal-tb"></tbody></table></div></div>
+</div>
+
+<!-- 21. PARTNERSHIP -->
+<div class="cp" id="panel-pp">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Net distributable profit</p><p class="rv" id="pp-net">₹0</p><p class="rs" id="pp-ns"></p></div><div class="rc ra"><p class="rl">Allowable remuneration</p><p class="rv" id="pp-rem">₹0</p><p class="rs">u/s 40(b) limit</p></div><div class="rc wrn"><p class="rl">Interest on capital</p><p class="rv" id="pp-int">₹0</p><p class="rs">max 12% p.a.</p></div><div class="rc grn"><p class="rl">Balance profit</p><p class="rv" id="pp-bal">₹0</p><p class="rs">shared in agreed ratio</p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Firm &amp; Partners</p>
+      <div class="cr"><label class="cl">Net profit before remuneration &amp; interest (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="pp-bp" value="5000000" oninput="uPP()"></div></div>
+      <div class="cr"><label class="cl">Total capital contributed by all partners (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="pp-cap" value="2000000" oninput="uPP()"></div></div>
+      <div class="cr"><label class="cl">Interest on capital rate (max 12%)</label><div class="iu"><input class="mi" type="number" id="pp-irate" value="12" min="0" max="12" step="0.5" oninput="uPP()"><span class="iup s">% p.a.</span></div></div>
+      <div class="cr"><label class="cl">Remuneration mode</label><select class="fi" id="pp-rm" onchange="uPP()"><option value="40b">Sec 40(b) maximum limit</option><option value="fixed">Fixed amount</option></select></div>
+      <div class="cr" id="pp-fixed-row" style="display:none"><label class="cl">Fixed remuneration (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="pp-fixv" value="1000000" oninput="uPP()"></div></div>
+      <div class="infobox" style="margin-top:1rem;font-size:10.5px;margin-bottom:0;"><strong>Sec 40(b) limits:</strong><br>• First ₹3L of book profit (or loss): ₹1,50,000 or 90% (higher)<br>• On balance: 60% of book profit</div>
+    </div>
+    <div class="card"><p class="st">Partners</p>
+      <div id="pp-rows"></div>
+      <button onclick="addPP()" style="margin-top:.7rem;padding:6px 12px;font-size:11px;font-family:'DM Sans',sans-serif;font-weight:600;color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:7px;cursor:pointer;">+ Add partner</button>
+    </div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Profit distribution statement</p><div class="tc"><button class="bxl" onclick="dlXL('pp-tb','Partnership_Distribution','pp')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Partner</th><th class="r">Capital (₹)</th><th class="r">Interest on capital (₹)</th><th class="r">Remuneration (₹)</th><th class="r">Profit share (₹)</th><th class="r">Total income (₹)</th></tr></thead><tbody id="pp-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Sec 40(b)</span><span class="ft">First ₹3L: 90% of book profit or ₹1.5L (higher) | Balance: 60%</span></div>
+</div>
+
+<!-- ===== MSME & ANALYTICS ===== -->
+<!-- 22. RATIO ANALYSIS -->
+<div class="cp" id="panel-ratio">
+  <div class="infobox">Enter P&amp;L and Balance Sheet figures to auto-compute <strong>12 financial ratios</strong> across Liquidity, Solvency, and Profitability — colour-coded against benchmarks.</div>
+  <div class="g2">
+    <div class="card"><p class="st">P&amp;L Inputs</p>
+      <div class="cr"><label class="cl">Revenue / net sales (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-rev" value="5000000" oninput="uRatio()"></div></div>
+      <div class="cr"><label class="cl">Cost of goods sold / COGS (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-cogs" value="3000000" oninput="uRatio()"></div></div>
+      <div class="cr"><label class="cl">EBIT / operating profit (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-ebit" value="800000" oninput="uRatio()"></div></div>
+      <div class="cr"><label class="cl">Net profit after tax (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-np" value="500000" oninput="uRatio()"></div></div>
+      <div class="cr"><label class="cl">Interest expense (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-int" value="100000" oninput="uRatio()"></div></div>
+    </div>
+    <div class="card"><p class="st">Balance Sheet Inputs</p>
+      <div class="cr"><label class="cl">Cash &amp; bank (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-cash" value="400000" oninput="uRatio()"></div></div>
+      <div class="cr"><label class="cl">Accounts receivable (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-rec" value="600000" oninput="uRatio()"></div></div>
+      <div class="cr"><label class="cl">Inventory (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-inv" value="500000" oninput="uRatio()"></div></div>
+      <div class="cr"><label class="cl">Current liabilities (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-cl" value="700000" oninput="uRatio()"></div></div>
+      <div class="cr"><label class="cl">Total assets (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-ta" value="3000000" oninput="uRatio()"></div></div>
+      <div class="cr"><label class="cl">Total debt (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-debt" value="1000000" oninput="uRatio()"></div></div>
+      <div class="cr"><label class="cl">Shareholders' equity (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="ra-eq" value="1500000" oninput="uRatio()"></div></div>
+    </div>
+  </div>
+  <div id="ratio-dash"></div>
+  <div class="cf"><div class="thr"><p class="tt2">Ratio summary</p><div class="tc"><button class="bxl" onclick="dlXL('ra-tb','Ratio_Analysis','ratio')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Ratio</th><th class="r">Value</th><th>Benchmark</th><th>Interpretation</th></tr></thead><tbody id="ra-tb"></tbody></table></div></div>
+</div>
+
+<!-- 23. BREAK-EVEN -->
+<div class="cp" id="panel-bep">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Break-even units</p><p class="rv" id="bep-u">0</p><p class="rs" id="bep-us"></p></div><div class="rc ra"><p class="rl">Break-even revenue</p><p class="rv" id="bep-r">₹0</p><p class="rs" id="bep-rs"></p></div><div class="rc grn"><p class="rl">Contribution margin</p><p class="rv" id="bep-cm">₹0</p><p class="rs" id="bep-cs"></p></div><div class="rc wrn"><p class="rl">Margin of safety</p><p class="rv" id="bep-mos">0%</p><p class="rs" id="bep-ms"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Break-Even Parameters</p>
+      <div class="cr"><label class="cl">Fixed costs / period (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="bep-fc" value="500000" oninput="uBEP()"></div></div>
+      <div class="cr"><label class="cl">Selling price per unit (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="bep-sp" value="200" oninput="uBEP()"></div></div>
+      <div class="cr"><label class="cl">Variable cost per unit (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="bep-vc" value="120" oninput="uBEP()"></div></div>
+      <div class="cr"><label class="cl">Current / expected sales (units)</label><div class="iu"><input class="mi" type="number" id="bep-ss" value="8000" oninput="uBEP()"><span class="iup s">units</span></div></div>
+    </div>
+    <div class="card"><p class="st">CVP chart</p><div class="cw"><canvas id="bep-ch"></canvas></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Profit / loss at different volumes</p><div class="tc"><button class="bxl" onclick="dlXL('bep-tb','Breakeven_Analysis','bep')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Units</th><th class="r">Revenue</th><th class="r">Total cost</th><th class="r">Contribution</th><th class="r">Profit / (Loss)</th></tr></thead><tbody id="bep-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">BEP</span><span class="ft">Fixed cost ÷ Contribution per unit</span><span class="fl" style="margin-left:12px;">P/V ratio</span><span class="ft">Contribution ÷ Sales × 100</span></div>
+</div>
+
+<!-- 24. CASH FLOW PROJECTOR -->
+<div class="cp" id="panel-cf">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Net annual cash flow</p><p class="rv" id="cf-net">₹0</p><p class="rs" id="cf-ns"></p></div><div class="rc grn"><p class="rl">Total inflows</p><p class="rv" id="cf-in">₹0</p></div><div class="rc red"><p class="rl">Total outflows</p><p class="rv" id="cf-out">₹0</p></div><div class="rc"><p class="rl">Closing balance</p><p class="rv" id="cf-cl">₹0</p><p class="rs" id="cf-cls"></p></div></div>
+  <div class="cf"><p class="st">Cash flow settings</p>
+    <div class="cr"><label class="cl">Opening cash balance (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="cf-op" value="200000" oninput="uCF()"></div></div>
+  </div>
+  <div class="cf"><p class="st">Monthly inflows &amp; outflows</p>
+    <div class="tw"><table><thead><tr><th>Month</th><th class="r">Inflow (₹)</th><th class="r">Outflow (₹)</th><th class="r">Net (₹)</th><th class="r">Closing bal. (₹)</th></tr></thead><tbody id="cf-tb"></tbody></table></div>
+  </div>
+  <div class="card" style="margin-bottom:1.3rem;"><p class="st">Cash flow trend</p><div class="cw"><canvas id="cf-ch"></canvas></div></div>
+  <div style="text-align:right;margin-bottom:1.3rem;"><button class="bxl" onclick="dlXL('cf-tb','Cash_Flow_Projector','cf')">⬇ Download Excel</button></div>
+</div>
+
+<!-- 25. WORKING CAPITAL -->
+<div class="cp" id="panel-wc">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Net working capital</p><p class="rv" id="wc-nwc">₹0</p><p class="rs" id="wc-ns"></p></div><div class="rc grn"><p class="rl">Current ratio</p><p class="rv" id="wc-cr">0</p><p class="rs" id="wc-crs"></p></div><div class="rc blu"><p class="rl">Quick ratio</p><p class="rv" id="wc-qr">0</p><p class="rs" id="wc-qrs"></p></div><div class="rc"><p class="rl">Cash conv. cycle</p><p class="rv" id="wc-ccc">— days</p><p class="rs" id="wc-cccs"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Current Assets</p>
+      <div class="cr"><label class="cl">Cash &amp; bank (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="wc-ca" value="500000" oninput="uWC()"></div></div>
+      <div class="cr"><label class="cl">Accounts receivable (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="wc-rec" value="800000" oninput="uWC()"></div></div>
+      <div class="cr"><label class="cl">Inventory (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="wc-inv" value="600000" oninput="uWC()"></div></div>
+      <div class="cr"><label class="cl">Other current assets (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="wc-oca" value="100000" oninput="uWC()"></div></div>
+    </div>
+    <div class="card"><p class="st">Current Liabilities &amp; Operating Data</p>
+      <div class="cr"><label class="cl">Accounts payable (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="wc-pay" value="400000" oninput="uWC()"></div></div>
+      <div class="cr"><label class="cl">Short-term borrowings (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="wc-stl" value="300000" oninput="uWC()"></div></div>
+      <div class="cr"><label class="cl">Other current liabilities (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="wc-ocl" value="200000" oninput="uWC()"></div></div>
+      <div class="cr"><label class="cl">Annual revenue (for DSO) (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="wc-rev" value="5000000" oninput="uWC()"></div></div>
+      <div class="cr"><label class="cl">COGS (for DIO) (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="wc-cogs" value="3000000" oninput="uWC()"></div></div>
+      <div class="cr"><label class="cl">Annual purchases (for DPO) (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="wc-pur" value="2000000" oninput="uWC()"></div></div>
+    </div>
+  </div>
+  <div id="wc-cycle" style="margin-bottom:1.3rem;"></div>
+  <div class="cf"><div class="thr"><p class="tt2">Working capital details</p><div class="tc"><button class="bxl" onclick="dlXL('wc-tb','Working_Capital','wc')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Particulars</th><th class="r">Amount (₹)</th><th>Remarks</th></tr></thead><tbody id="wc-tb"></tbody></table></div></div>
+</div>
+
+<!-- ===== STOCK & TRADING ===== -->
+<!-- 26. CAPITAL GAINS -->
+<div class="cp" id="panel-cg">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Tax payable</p><p class="rv" id="cg-tax">₹0</p><p class="rs" id="cg-ts"></p></div><div class="rc ra"><p class="rl">Capital gain / loss</p><p class="rv" id="cg-g">₹0</p><p class="rs" id="cg-gs"></p></div><div class="rc grn"><p class="rl">Net profit after tax</p><p class="rv" id="cg-n">₹0</p><p class="rs" id="cg-ns"></p></div><div class="rc blu"><p class="rl">Effective tax rate</p><p class="rv" id="cg-eff">0%</p><p class="rs">on gains</p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Capital Gains Parameters</p>
+      <div class="cr"><label class="cl">Asset type</label><select class="fi" id="cg-asset" onchange="uCG()"><option value="eq">Equity / Equity MF</option><option value="debt">Debt / Other MF</option><option value="prop">Immovable property</option></select></div>
+      <div class="cr"><label class="cl">Holding period</label><select class="fi" id="cg-hold" onchange="uCG()"><option value="s">Short-term</option><option value="l">Long-term</option></select></div>
+      <div class="cr"><label class="cl">Purchase price (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="cg-buy" value="100000" oninput="uCG()"></div></div>
+      <div class="cr"><label class="cl">Sale price (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="cg-sell" value="180000" oninput="uCG()"></div></div>
+      <div class="cr"><label class="cl">Applicable slab (for debt/property STCG)</label><select class="fi" id="cg-slab" onchange="uCG()"><option value="5">5%</option><option value="20">20%</option><option value="30">30%</option></select></div>
+    </div>
+    <div class="card"><p class="st">Tax rate reference — Budget 2024</p><div id="cg-ref"></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Capital gains breakup</p><div class="tc"><button class="bxl" onclick="dlXL('cg-tb','Capital_Gains','cg')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Particulars</th><th class="r">Amount (₹)</th></tr></thead><tbody id="cg-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">LTCG Equity</span><span class="ft">First ₹1.25L exempt; 12.5% above</span><span class="fl" style="margin-left:12px;">STCG Equity</span><span class="ft">20% flat (post Jul 2024)</span></div>
+</div>
+
+<!-- 27. BROKERAGE -->
+<div class="cp" id="panel-brok">
+  <div class="rg r4"><div class="rc feat"><p class="rl">Net P&amp;L</p><p class="rv" id="br-pnl">₹0</p><p class="rs" id="br-ps"></p></div><div class="rc ra"><p class="rl">Total charges</p><p class="rv" id="br-ch">₹0</p><p class="rs" id="br-cs"></p></div><div class="rc wrn"><p class="rl">Brokerage</p><p class="rv" id="br-bk">₹0</p><p class="rs" id="br-bs"></p></div><div class="rc grn"><p class="rl">Break-even price</p><p class="rv" id="br-be">₹0</p><p class="rs" id="br-bes"></p></div></div>
+  <div class="g2">
+    <div class="card"><p class="st">Trade Parameters</p>
+      <div class="cr"><label class="cl">Segment</label><select class="fi" id="br-seg" onchange="uBR()"><option value="del">Equity Delivery</option><option value="int">Equity Intraday</option><option value="fno">F&amp;O Futures</option><option value="opt">F&amp;O Options</option></select></div>
+      <div class="cr"><label class="cl">Buy price (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="br-buy" value="500" step="0.01" oninput="uBR()"></div></div>
+      <div class="cr"><label class="cl">Sell price (₹)</label><div class="iu"><span class="iup">₹</span><input class="mi" type="number" id="br-sell" value="520" step="0.01" oninput="uBR()"></div></div>
+      <div class="cr"><label class="cl">Quantity</label><div class="iu"><input class="mi" type="number" id="br-qty" value="100" oninput="uBR()"></div></div>
+    </div>
+    <div class="card"><p class="st">Charges summary</p><div id="br-sum"></div></div>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Detailed charges</p><div class="tc"><button class="bxl" onclick="dlXL('br-tb','Brokerage_Charges','brok')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Charge</th><th class="r">Buy side</th><th class="r">Sell side</th><th class="r">Total</th></tr></thead><tbody id="br-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Zerodha model</span><span class="ft">Delivery: 0% | Intraday: ₹20 or 0.03% | F&amp;O: ₹20 flat</span></div>
+</div>
+
+<!-- 28. STOCK AVERAGE -->
+<div class="cp" id="panel-savg">
+  <div class="rg r4"><div class="rc feat"><p class="rl">New average price</p><p class="rv" id="sa-avg">₹0</p><p class="rs" id="sa-as"></p></div><div class="rc"><p class="rl">Total quantity</p><p class="rv" id="sa-qty">0</p></div><div class="rc ra"><p class="rl">Total investment</p><p class="rv" id="sa-inv">₹0</p></div><div class="rc grn"><p class="rl">Price change</p><p class="rv" id="sa-chg">0%</p><p class="rs" id="sa-cs">vs lot 1</p></div></div>
+  <div class="cf"><p class="st">Stock average — add up to 5 lots</p>
+    <div id="sa-lots" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-bottom:1rem;"></div>
+    <button onclick="addSA()" style="padding:6px 12px;font-size:11px;font-family:'DM Sans',sans-serif;font-weight:600;color:var(--accent);background:transparent;border:1px solid var(--accent);border-radius:7px;cursor:pointer;">+ Add lot</button>
+  </div>
+  <div class="cf"><div class="thr"><p class="tt2">Lot-wise breakup</p><div class="tc"><button class="bxl" onclick="dlXL('sa-tb','Stock_Average','savg')">⬇ Excel</button></div></div>
+  <div class="tw"><table><thead><tr><th>Lot</th><th class="r">Quantity</th><th class="r">Buy price (₹)</th><th class="r">Investment (₹)</th><th class="r">% of total</th></tr></thead><tbody id="sa-tb"></tbody></table></div></div>
+  <div class="fbox"><span class="fl">Formula</span><span class="ft">Average = Σ(Qty × Price) / Σ(Qty)</span></div>
+</div>
+
+</main>
+<footer>
+  <p style="font-weight:600;color:var(--ink);margin-bottom:3px;">Maars &amp; Associates, Chartered Accountants</p>
+  <p style="margin-bottom:3px;">CA Akash Agarwal &nbsp;|&nbsp; +91-8799999935</p>
+  <p style="font-size:10px;margin-top:5px;">CA Financial Suite — 28 calculators. Results are estimates for professional guidance only. Consult a qualified CA before making financial decisions.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+// ════════════════════════════════════════════════════════════════
+// CALCULATOR MAP & NAVIGATION
+// ════════════════════════════════════════════════════════════════
+const CMAP = {
+  loan:   {label:'Loan & Credit',           calcs:{emi:'Loan EMI', '4in1':'4-in-1 Loan', home:'Home Loan', card:'Credit Card EMI'}},
+  invest: {label:'Investment & Returns',     calcs:{ci:'Compound Interest', si:'Simple Interest', sip:'SIP Returns', swp:'SWP', fd:'FD Maturity', ppf:'PPF', roi:'ROI / CAGR'}},
+  tax:    {label:'Tax & Compliance',         calcs:{tax:'Income Tax', tds:'TDS Calculator', adv:'Advance Tax', gst:'GST', gstlate:'GST Late Fee', hra:'HRA Exemption'}},
+  biz:    {label:'Business & Advisory',      calcs:{dep:'Depreciation', bval:'Business Valuation', sal:'Salary Structuring', pp:'Partnership Profit'}},
+  msme:   {label:'MSME & Analytics',         calcs:{ratio:'Ratio Analysis', bep:'Break-Even', cf:'Cash Flow Projector', wc:'Working Capital'}},
+  stock:  {label:'Stock & Trading',          calcs:{cg:'Capital Gains Tax', brok:'Brokerage', savg:'Stock Average'}}
+};
+let currentCat='loan', currentCalc='emi';
+
+function onCat(cat){
+  currentCat=cat;
+  const sel=document.getElementById('calcSel');
+  sel.innerHTML=Object.entries(CMAP[cat].calcs).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
+  sw(Object.keys(CMAP[cat].calcs)[0]);
+}
+function sw(id){
+  currentCalc=id;
+  document.querySelectorAll('.cp').forEach(p=>p.classList.remove('active'));
+  const el=document.getElementById('panel-'+id);
+  if(el) el.classList.add('active');
+  document.getElementById('badge').textContent=CMAP[currentCat].calcs[id]||id;
+  document.getElementById('calcSel').value=id;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// HELPERS
+const fI=v=>{const n=Math.round(Math.abs(v)),s=v<0?'-':'';return n>=10000000?s+'₹'+(n/10000000).toFixed(2)+' Cr':n>=100000?s+'₹'+(n/100000).toFixed(2)+' L':s+'₹'+n.toLocaleString('en-IN');};
+const fS=v=>{const n=Math.round(Math.abs(v)),s=v<0?'-':'';return n>=10000000?s+'₹'+(n/10000000).toFixed(1)+'Cr':n>=100000?s+'₹'+(n/100000).toFixed(1)+'L':n>=1000?s+'₹'+(n/1000).toFixed(0)+'K':s+'₹'+n;};
+const gv=id=>parseFloat(document.getElementById(id)?.value)||0;
+const gs=id=>document.getElementById(id)?.value||'';
+const st=(id,v)=>{const e=document.getElementById(id); if(e) e.textContent=v;};
+const MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const NY=new Date().getFullYear();
+
+function bind(sid,tid,cb){
+  const sl=document.getElementById(sid),tx=document.getElementById(tid);
+  if(!sl||!tx) return;
+  sl.addEventListener('input',()=>{tx.value=parseFloat(sl.value);cb();});
+  tx.addEventListener('input',()=>{sl.value=Math.min(Math.max(parseFloat(tx.value)||0,+sl.min),+sl.max);cb();});
+}
+
+function mkCh(id,ds,xtra={}){
+  const el=document.getElementById(id); if(!el) return null;
+  return new Chart(el.getContext('2d'),{type:'line',data:{labels:[],datasets:ds},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+fI(c.raw)}}},scales:{x:{ticks:{autoSkip:true,maxTicksLimit:8,color:'#7a7670',font:{size:10,family:'DM Mono'}},grid:{color:'rgba(0,0,0,0.04)'}},y:{ticks:{callback:v=>fS(v),color:'#7a7670',font:{size:10,family:'DM Mono'}},grid:{color:'rgba(0,0,0,0.04)'}}}},...xtra});
+}
+
+function addMo(d,m){const x=new Date(d);x.setMonth(x.getMonth()+m);return x;}
+function fmtDt(d){return `${d.getDate()} ${MN[d.getMonth()]} ${d.getFullYear()}`;}
+
+// EXCEL EXPORT
+function dlXL(tbodyId, sheetTitle, cid){
+  const tbody=document.getElementById(tbodyId);
+  if(!tbody||!tbody.rows.length){alert('No data to export.');return;}
+  const wb=XLSX.utils.book_new();
+  const sum=[['Maars & Associates, Chartered Accountants'],['CA Akash Agarwal | +91-8799999935'],[CMAP[currentCat]?.calcs[cid]||sheetTitle],['Generated',new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})],[]];
+  const sw=XLSX.utils.aoa_to_sheet(sum); sw['!cols']=[{wch:30},{wch:22}];
+  XLSX.utils.book_append_sheet(wb,sw,'Summary');
+  const tbl=tbody.closest('table'),hdrs=[];
+  if(tbl?.tHead) tbl.tHead.querySelectorAll('th').forEach(th=>hdrs.push(th.textContent.trim()));
+  const sd=[]; if(hdrs.length) sd.push(hdrs);
+  Array.from(tbody.rows).forEach(row=>{
+    const cells=[];
+    Array.from(row.cells).forEach((c,i)=>{
+      const txt=c.textContent.replace(/MORA/g,'').trim();
+      const raw=txt.replace(/₹/g,'').replace(/,/g,'').trim();
+      const m=raw.endsWith(' Cr')?parseFloat(raw)*10000000:raw.endsWith(' L')?parseFloat(raw)*100000:null;
+      if(m!==null&&!isNaN(m)) cells.push(m);
+      else if(i>0&&!isNaN(parseFloat(raw))&&raw!='') cells.push(parseFloat(raw));
+      else cells.push(txt);
+    });
+    sd.push(cells);
+  });
+  const ws=XLSX.utils.aoa_to_sheet(sd);
+  ws['!cols']=hdrs.map(h=>({wch:Math.max(h.length+4,14)}));
+  const sn=String(sheetTitle).replace(/[:\\\/\?\*\[\]]/g,'').slice(0,31);
+  XLSX.utils.book_append_sheet(wb,ws,sn);
+  XLSX.writeFile(wb,sn.replace(/\s+/g,'_')+'_'+new Date().toISOString().slice(0,10)+'.xlsx');
+}
+
+// 1. LOAN EMI
+let tMode='y';
+(function(){const n=new Date(),p=x=>String(x).padStart(2,'0');document.getElementById('emi-dis').value=`${n.getFullYear()}-${p(n.getMonth()+1)}-${p(n.getDate())}`;const x=addMo(n,1);document.getElementById('emi-st').value=`${x.getFullYear()}-${p(x.getMonth()+1)}-${p(x.getDate())}`;})();
+
+function setTM(m){
+  tMode=m;
+  document.getElementById('emi-yb').classList.toggle('on',m==='y');
+  document.getElementById('emi-mb').classList.toggle('on',m==='m');
+  st('emi-tu',m==='y'?'years':'months');
+  const sl=document.getElementById('emi-t');
+  if(m==='y'){sl.max=30;sl.step=1;document.getElementById('emi-tT').value=Math.max(1,Math.round((gv('emi-tT')||20)));}
+  else{sl.max=360;sl.step=1;document.getElementById('emi-tT').value=Math.max(1,Math.round((gv('emi-tT')||20)*12));}
+  sl.value=gv('emi-tT'); uEMI();
+}
+
+const emiCh=new Chart(document.getElementById('emi-ch').getContext('2d'),{type:'bar',data:{labels:[],datasets:[{label:'Principal',data:[],backgroundColor:'rgba(15,14,11,0.15)',borderColor:'rgba(15,14,11,0.3)',borderWidth:1},{label:'Interest',data:[],backgroundColor:'rgba(196,98,45,0.45)',borderColor:'#c4622d',borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,font:{size:11}}},tooltip:{callbacks:{label:c=>' '+fI(c.raw)}}},scales:{x:{stacked:true,ticks:{autoSkip:true,maxTicksLimit:12,color:'#7a7670',font:{size:10,family:'DM Mono'}},grid:{display:false}},y:{stacked:true,ticks:{callback:v=>fS(v),color:'#7a7670',font:{size:10,family:'DM Mono'}},grid:{color:'rgba(0,0,0,0.04)'}}}}});
+
+function emiCalc(P,r,n){return n>0&&r>0?P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):n>0?P/n:0;}
+
+function uEMI(){
+  const L=gv('emi-lT'),rA=gv('emi-rT');
+  let totalM=tMode==='y'?Math.round(gv('emi-tT'))*12:Math.round(gv('emi-tT'));
+  const mora=Math.max(0,Math.round(gv('emi-moT')));
+  if(!L||!rA||!totalM) return;
+  const r=rA/(12*100);
+  let balAfterMora=L,moraInt=0;
+  for(let m=0;m<mora;m++){const i=balAfterMora*r;moraInt+=i;balAfterMora+=i;}
+  const emiN=totalM-mora;
+  const emi=emiN>0?emiCalc(balAfterMora,r,emiN):0;
+  const totalPaid=moraInt+emi*emiN,totalInt=totalPaid-L;
+  const pp=((L/totalPaid)*100).toFixed(1),ip=(100-pp).toFixed(1);
+  st('emi-emi',fI(emi));st('emi-total',fI(totalPaid));st('emi-int',fI(totalInt));
+  st('emi-mint',fI(moraInt));st('emi-ms',mora>0?`${mora} months`:'No moratorium');
+  st('emi-ts',`${totalM} months`);st('emi-ip',ip+'% of total paid');
+  const sv=gs('emi-st');
+  if(sv&&emiN>0){const cd=addMo(new Date(sv),emiN-1);st('emi-cd',`${MN[cd.getMonth()]} ${cd.getFullYear()}`);st('emi-cs',`${emiN} EMIs`);}else{st('emi-cd','—');}
+  document.getElementById('emi-bf').style.width=pp+'%';
+  st('emi-b1','Principal '+pp+'%');st('emi-b2','Interest '+ip+'%');
+  const yL=[],yP=[],yI=[];let b2=balAfterMora;
+  for(let yr=1;yr<=Math.ceil(emiN/12);yr++){let yp=0,yi=0;for(let m=0;m<12&&(yr-1)*12+m<emiN;m++){const ic=b2*r,pc=Math.min(emi-ic,b2);b2=Math.max(0,b2-pc);yp+=pc;yi+=ic;}yL.push('Yr '+yr);yP.push(Math.round(yp));yI.push(Math.round(yi));}
+  emiCh.data.labels=yL;emiCh.data.datasets[0].data=yP;emiCh.data.datasets[1].data=yI;emiCh.update('none');
+  uEMITbl(L,r,emi,mora,balAfterMora,emiN);
+}
+function uEMITbl(L,r,emi,mora,balAfterMora,emiN){
+  const step=+gs('emi-p');
+  const dV=gs('emi-dis'),sV=gs('emi-st');
+  const dD=dV?new Date(dV):null,sD=sV?new Date(sV):null;
+  let rows='',cnt=0,pE=0,pP=0,pI=0,pO=L,bal=L;
+  for(let m=1;m<=mora;m++){
+    const ic=bal*r;bal+=ic;pE+=ic;pI+=ic;
+    if(m%step===0||m===mora){
+      const bg=cnt%2?'background:var(--cream);':'';
+      rows+=`<tr style="${bg}"><td>Mo ${m} <span class="mb">MORA</span></td><td>${dD?fmtDt(addMo(dD,m)):''}</td><td class="r">${fI(pO)}</td><td class="r amb">${fI(pE)}</td><td class="r">—</td><td class="r acc">${fI(pI)}</td><td class="r">${fI(bal)}</td></tr>`;
+      pO=bal;pE=pP=pI=0;cnt++;
+    }
+  }
+  bal=balAfterMora;pO=bal;
+  for(let m=1;m<=emiN;m++){
+    const ic=bal*r,pc=Math.min(emi-ic,bal);bal=Math.max(0,bal-pc);pE+=emi;pP+=pc;pI+=ic;
+    if(m%step===0||m===emiN){
+      const bg=cnt%2?'background:var(--cream);':'';
+      rows+=`<tr style="${bg}"><td style="color:var(--muted)">Mo ${mora+m}</td><td style="color:var(--muted)">${sD?fmtDt(addMo(sD,m-1)):''}</td><td class="r">${fI(pO)}</td><td class="r">${fI(pE)}</td><td class="r">${fI(pP)}</td><td class="r acc">${fI(pI)}</td><td class="r ${bal<=1?'grn':''}">${fI(Math.max(0,bal))}</td></tr>`;
+      pO=bal;pE=pP=pI=0;cnt++;
+    }
+  }
+  document.getElementById('emi-tb').innerHTML=rows;
+}
+bind('emi-l','emi-lT',uEMI); bind('emi-r','emi-rT',uEMI); bind('emi-t','emi-tT',uEMI); bind('emi-mo','emi-moT',uEMI);
+['emi-p','emi-dis','emi-st'].forEach(id=>document.getElementById(id).addEventListener('change',uEMI));
+
+// 2. 4-IN-1 LOAN
+let solveFor='emi';
+function sv4(mode){
+  solveFor=mode;
+  ['emi','amount','tenure','rate'].forEach(m=>{
+    const b=document.getElementById('sv-'+m); if(b) b.classList.toggle('on',m===mode);
+    const fld={emi:'f4-e',amount:'f4-a',tenure:'f4-n',rate:'f4-r'}[m];
+    const inp=document.getElementById(fld); if(inp) inp.style.opacity=m===mode?'0.4':'1';
+  });
+  u4in1();
+}
+function pvCalc(pmt,r,n){return r>0?pmt*(1-Math.pow(1+r,-n))/r:pmt*n;}
+function nCalc(P,pmt,r){if(r<=0)return P/pmt;const v=pmt/(pmt-P*r);if(v<=0)return 0;return Math.log(v)/Math.log(1+r);}
+function irrCalc(flows){let r=0.01;for(let i=0;i<100;i++){let f=0,df=0;flows.forEach((c,t)=>{const d=Math.pow(1+r,t);f+=c/d;df-=t*c/Math.pow(1+r,t+1);});if(Math.abs(df)<1e-10) break;const nr=r-f/df;if(!isFinite(nr)) break;if(Math.abs(nr-r)<1e-8){r=nr;break;}r=Math.max(-0.99,Math.min(nr,100));}return r;}
+function rateCalc(P,pmt,n){let r=0.01;for(let i=0;i<200;i++){const f=emiCalc(P,r,n)-pmt;const dr=1e-6,f2=emiCalc(P,r+dr,n)-pmt;const df=(f2-f)/dr;if(Math.abs(df)<1e-12) break;const nr=r-f/df;if(!isFinite(nr)||nr<=0) break;if(Math.abs(nr-r)<1e-10){r=nr;break;}r=Math.max(1e-8,nr);}return r;}
+
+function u4in1(){
+  let P=gv('f4-a'),rA=gv('f4-r'),n=Math.round(gv('f4-n')),pmt=gv('f4-e'),fees=gv('f4-f');
+  const r=rA/(12*100);
+  if(solveFor==='emi') pmt=emiCalc(P,r,n);
+  if(solveFor==='amt') P=pvCalc(pmt,r,n);
+  if(solveFor==='ten') n=Math.max(1,Math.ceil(nCalc(P,pmt,r)));
+  if(solveFor==='rat'){const mr=rateCalc(P,pmt,n);rA=mr*12*100;}
+  if(!isFinite(pmt)||!isFinite(P)||!isFinite(n)) return;
+  const total=pmt*n,int=total-P;
+  const apr=irrCalc([-Math.max(1,P-fees)].concat(Array(n).fill(pmt)))*12*100;
+  const lMap={emi:`${fI(pmt)} /mo`,amt:fI(P),ten:`${n} months`,rat:`${rA.toFixed(2)}% p.a.`};
+  const lLbl={emi:'EMI',amt:'Loan Amount',ten:'Tenure',rat:'Interest Rate'};
+  st('f4-rl',lLbl[solveFor]); st('f4-rv',lMap[solveFor]);
+  st('f4-tot',fI(total+fees)); st('f4-ts',`${n} months`);
+  st('f4-int',fI(int)); st('f4-is',`+ ${fI(fees)} fees`);
+  st('f4-apr',apr.toFixed(2)+'%');
+  const step=+gs('f4-p');
+  let rows='',cnt=0,bal=P,pO=P,pE=0,pP=0,pI=0;
+  for(let m=1;m<=n;m++){
+    const ic=bal*r,pc=Math.min(pmt-ic,bal);bal=Math.max(0,bal-pc);pE+=pmt;pP+=pc;pI+=ic;
+    if(m%step===0||m===n){
+      const bg=cnt%2?'background:var(--cream);':'';
+      rows+=`<tr style="${bg}"><td style="color:var(--muted)">${step===1?'Mo '+m:`Mo ${m-step+1}–${m}`}</td><td class="r">${fI(pO)}</td><td class="r">${fI(pE)}</td><td class="r">${fI(pP)}</td><td class="r acc">${fI(pI)}</td><td class="r ${bal<=1?'grn':''}">${fI(Math.max(0,bal))}</td></tr>`;
+      pO=bal;pE=pP=pI=0;cnt++;
+    }
+  }
+  document.getElementById('f4-tb').innerHTML=rows;
+}
+['f4-a','f4-r','f4-n','f4-e','f4-f'].forEach(id=>{const e=document.getElementById(id);if(e)e.addEventListener('input',u4in1);});
+const f4p=document.getElementById('f4-p');if(f4p)f4p.addEventListener('change',u4in1);
+
+// 3. HOME LOAN
+function uHL(){
+  const hv=gv('hl-hv'),dpPct=gv('hl-dp'),rA=gv('hl-r'),yrs=Math.max(1,gv('hl-y'));
+  const ins=gv('hl-i'),feePct=gv('hl-fee');
+  const dp=hv*dpPct/100,L=Math.max(0,hv+ins-dp),r=rA/(12*100),n=yrs*12;
+  const fees=L*feePct/100;
+  const taxM=(hv*gv('hl-tx')/100)/12,hinsM=(hv*gv('hl-hi')/100)/12,maintM=gv('hl-ma');
+  const expM=taxM+hinsM+maintM;
+  const emi=emiCalc(L,r,n);
+  const mpre=gv('hl-mp'),qpre=gv('hl-qp'),apre=gv('hl-ap');
+  let bal=L,rows=[],totalInt=0,totalPre=0;
+  for(let m=1;m<=n&&bal>0;m++){
+    const ic=bal*r,pc=Math.min(emi-ic,bal);
+    let pre=mpre;
+    if(m%3===0) pre+=qpre;
+    if(m%12===0) pre+=apre;
+    pre=Math.min(pre,bal-pc);
+    bal=Math.max(0,bal-pc-pre);
+    totalInt+=ic;totalPre+=pre;
+    rows.push({m,ic,pc,pre,bal,emi});
+  }
+  const actualMonths=rows.length;
+  const totalPaid=dp+fees+emi*actualMonths+totalPre+expM*actualMonths;
+  const pp=((L/Math.max(L+totalInt,1))*100).toFixed(1),ip=(100-pp).toFixed(1);
+  st('hl-m',fI(emi+expM+(mpre||0)));
+  st('hl-e',fI(emi));st('hl-es',`${actualMonths} months`);
+  st('hl-i',fI(totalInt));st('hl-is',ip+'% of loan+interest');
+  st('hl-t',fI(totalPaid));
+  document.getElementById('hl-bf').style.width=pp+'%';
+  st('hl-b1','Principal '+pp+'%');st('hl-b2','Interest '+ip+'%');
+  const step=+gs('hl-p');
+  let trows='',cnt=0,pO=L,pE=0,pP=0,pI=0,pPre=0;
+  rows.forEach((row,idx)=>{
+    pE+=row.emi+row.pre+expM;pP+=row.pc;pI+=row.ic;pPre+=row.pre;
+    if((idx+1)%step===0||(idx+1)===actualMonths){
+      const bg=cnt%2?'background:var(--cream);':'';
+      trows+=`<tr style="${bg}"><td style="color:var(--muted)">${step===1?'Mo '+(idx+1):`Yr ${Math.ceil((idx+1)/12)}`}</td><td class="r">${fI(pO)}</td><td class="r">${fI(pE)}</td><td class="r">${fI(pP)}</td><td class="r acc">${fI(pI)}</td><td class="r amb">${fI(pPre)}</td><td class="r">${fI(expM*step)}</td><td class="r ${row.bal<=1?'grn':''}">${fI(Math.max(0,row.bal))}</td></tr>`;
+      pO=row.bal;pE=pP=pI=pPre=0;cnt++;
+    }
+  });
+  document.getElementById('hl-tb').innerHTML=trows;
+}
+const hlp=document.getElementById('hl-p'); if(hlp) hlp.addEventListener('change',uHL);
+
+// 4. CREDIT CARD EMI
+function uCC(){
+  const amt=gv('cc-amt'),rA=gv('cc-r'),n=Math.max(1,Math.round(gv('cc-n'))),fee=gv('cc-f');
+  const r=rA/(12*100);
+  const emi=emiCalc(amt,r,n);
+  const gstFee=fee*0.18;
+  let rows=[],bal=amt,totalInt=0,totalGST=0;
+  for(let m=1;m<=n;m++){
+    const ic=bal*r,pc=Math.min(emi-ic,bal),gstI=ic*0.18;
+    bal=Math.max(0,bal-pc);totalInt+=ic;totalGST+=gstI;
+    rows.push({m,emi:emi+gstI,pc,ic,gstI,bal});
+  }
+  const total=emi*n+totalGST+fee+gstFee;
+  const apr=irrCalc([-Math.max(1,amt-fee)].concat(rows.map(r=>r.emi)))*12*100;
+  st('cc-e',fI(emi+(rows[0]?.gstI||0)));
+  st('cc-i',fI(totalInt));st('cc-is',`over ${n} months`);
+  st('cc-g',fI(totalGST+gstFee));
+  st('cc-t',fI(total));st('cc-a',`APR ~${apr.toFixed(1)}%`);
+  document.getElementById('cc-sum').innerHTML=`<div style="display:grid;gap:.5rem;">${[['Transaction amount',fI(amt)],['Processing fee + GST',fI(fee+gstFee)],['Total interest payable',fI(totalInt)],['GST on interest (18%)',fI(totalGST)],['Total outgo',fI(total)],['Loan APR',apr.toFixed(2)+'%']].map(([l,v])=>`<div style="display:flex;justify-content:space-between;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px;"><span style="color:var(--muted)">${l}</span><strong>${v}</strong></div>`).join('')}</div>`;
+  document.getElementById('cc-tb').innerHTML=rows.map((row,i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td style="color:var(--muted)">${row.m}</td><td class="r">${fI(row.emi)}</td><td class="r">${fI(row.pc)}</td><td class="r acc">${fI(row.ic)}</td><td class="r amb">${fI(row.gstI)}</td><td class="r ${row.bal<=1?'grn':''}">${fI(Math.max(0,row.bal))}</td></tr>`).join('');
+}
+// 5. COMPOUND INTEREST
+const ciCh=mkCh('ci-ch',[{label:'Balance',data:[],borderColor:'#c4622d',backgroundColor:'rgba(196,98,45,0.1)',fill:true,tension:0.35,pointRadius:0,borderWidth:2},{label:'Principal',data:[],borderColor:'rgba(15,14,11,0.2)',backgroundColor:'transparent',fill:false,tension:0,borderDash:[5,4],pointRadius:0,borderWidth:1.5}]);
+function uCI(){
+  const P=gv('ci-pT'),r=gv('ci-rT')/100,t=Math.max(1,Math.round(gv('ci-tT'))),n=+gs('ci-n');
+  if(!P||!r||!t) return;
+  const fin=P*Math.pow(1+r/n,n*t),int=fin-P,pp=((P/fin)*100).toFixed(1),ip=(100-pp).toFixed(1);
+  st('ci-f',fI(fin));st('ci-i',fI(int));st('ci-p2',fI(P));
+  st('ci-m',(fin/P).toFixed(1)+'× your money');st('ci-ip','+'+((int/P)*100).toFixed(1)+'% gain');st('ci-pp',pp+'% of total');
+  document.getElementById('ci-bf').style.width=pp+'%';st('ci-b1','Principal '+pp+'%');st('ci-b2','Interest '+ip+'%');
+  st('ci-fv',`${fI(P)} × (1+${(r*100).toFixed(1)}%/${n})^(${n}×${t})`);
+  const lb=[],bl=[],pr=[];
+  for(let y=0;y<=t;y++){lb.push('Yr '+y);bl.push(Math.round(P*Math.pow(1+r/n,n*y)));pr.push(P);}
+  ciCh.data.labels=lb;ciCh.data.datasets[0].data=bl;ciCh.data.datasets[1].data=pr;ciCh.update('none');
+  uCITbl(P,r,t,n);
+}
+function uCITbl(P,r,t,n){
+  const pv=gs('ci-per'),isD=pv==='daily',isM=pv==='monthly';
+  const step=isD?1/365:isM?1/12:parseFloat(pv);
+  const pn=isD?'Day':isM?'Month':pv==='0.25'?'Quarter':pv==='0.5'?'Half-year':pv==='1'?'Year':pv+'-yr interval';
+  st('ci-t1',pn);st('ci-t2','Interest this '+pn.toLowerCase());st('ci-tt',pn+'-by-'+pn.toLowerCase()+' breakdown');
+  let rows='',prev=P,cnt=0;
+  for(let y=step;y<=t+step*0.01&&cnt<500;y+=step){
+    const yc=Math.min(y,t),bal=Math.round(P*Math.pow(1+r/n,n*yc)),pi=bal-prev,ti=bal-P,bg=cnt%2?'background:var(--cream);':'';
+    let lbl;
+    if(isD){const d=new Date(NY,0,Math.round(y*365));lbl=`Day ${Math.round(y*365)} (${d.getDate()} ${MN[d.getMonth()]} ${d.getFullYear()})`;}
+    else if(isM){const tm=Math.round(y*12);lbl=`${MN[(tm-1)%12]} ${NY+Math.floor((tm-1)/12)}`;}
+    else if(pv==='0.25'){const yr=Math.ceil(y-0.001),q=Math.round(((y%1)||1)/0.25);lbl=`Y${yr} Q${q||4}`;}
+    else if(pv==='0.5'){const yr=Math.ceil(y-0.001),h=Math.round(y*2)%2===0?2:1;lbl=`Y${yr} H${h}`;}
+    else lbl=`${pn} ${Math.round(y/step)}`;
+    rows+=`<tr style="${bg}"><td style="color:var(--muted)">${lbl}</td><td class="r">${fI(bal)}</td><td class="r acc">+${fI(pi)}</td><td class="r" style="color:var(--muted)">${fI(ti)}</td></tr>`;
+    prev=bal;cnt++;
+  }
+  if(cnt>=500) rows+=`<tr><td colspan="4" style="padding:10px;text-align:center;color:var(--muted);font-style:italic">First 500 rows shown</td></tr>`;
+  document.getElementById('ci-tb').innerHTML=rows;
+}
+bind('ci-p','ci-pT',uCI);bind('ci-r','ci-rT',uCI);bind('ci-t','ci-tT',uCI);
+['ci-n','ci-per'].forEach(id=>{const e=document.getElementById(id);if(e)e.addEventListener('change',uCI);});
+
+// 6. SIMPLE INTEREST
+const siCh=mkCh('si-ch',[{label:'Amount',data:[],borderColor:'#c4622d',backgroundColor:'rgba(196,98,45,0.1)',fill:true,tension:0,pointRadius:3,borderWidth:2},{label:'Principal',data:[],borderColor:'rgba(15,14,11,0.2)',backgroundColor:'transparent',fill:false,tension:0,borderDash:[5,4],pointRadius:0,borderWidth:1.5}]);
+function uSI(){
+  const P=gv('si-pT'),r=gv('si-rT'),t=Math.max(1,Math.round(gv('si-tT')));
+  if(!P||!r||!t) return;
+  const si=P*r*t/100,tot=P+si,pp=((P/tot)*100).toFixed(1),ip=(100-pp).toFixed(1);
+  st('si-t',fI(tot));st('si-i',fI(si));st('si-p2',fI(P));
+  st('si-m',(tot/P).toFixed(2)+'× your money');st('si-ip','+'+((si/P)*100).toFixed(1)+'% gain');st('si-pp',pp+'% of total');
+  document.getElementById('si-bf').style.width=pp+'%';st('si-b1','Principal '+pp+'%');st('si-b2','Interest '+ip+'%');
+  st('si-fv',`SI = ${fI(P)} × ${r}% × ${t} = ${fI(si)}`);
+  const lb=[],v=[],p=[];
+  for(let y=0;y<=t;y++){lb.push('Yr '+y);v.push(Math.round(P+P*r*y/100));p.push(P);}
+  siCh.data.labels=lb;siCh.data.datasets[0].data=v;siCh.data.datasets[1].data=p;siCh.update('none');
+}
+bind('si-p','si-pT',uSI);bind('si-r','si-rT',uSI);bind('si-t','si-tT',uSI);
+
+// 7. SIP
+const sipCh=mkCh('sip-ch',[{label:'Invested',data:[],borderColor:'rgba(15,14,11,0.3)',backgroundColor:'rgba(15,14,11,0.06)',fill:true,tension:0,pointRadius:0,borderWidth:1.5},{label:'Portfolio',data:[],borderColor:'#c4622d',backgroundColor:'rgba(196,98,45,0.08)',fill:true,tension:0.3,pointRadius:0,borderWidth:2}]);
+function uSIP(){
+  const mo=gv('sip-mT'),rA=gv('sip-rT'),t=Math.max(1,Math.round(gv('sip-tT')));
+  if(!mo||!rA||!t) return;
+  const i=rA/(12*100),n=t*12,mat=mo*((Math.pow(1+i,n)-1)/i)*(1+i),inv=mo*n,gain=mat-inv;
+  const ip=((inv/mat)*100).toFixed(1),gp=(100-ip).toFixed(1);
+  st('sip-m2',fI(mat));st('sip-i',fI(inv));st('sip-g',fI(gain));
+  st('sip-a',((gain/inv)*100).toFixed(1)+'%');st('sip-mx',(mat/inv).toFixed(2)+'× invested');
+  st('sip-gp',gp+'% of corpus');st('sip-is',`₹${mo.toLocaleString('en-IN')}/mo × ${n} months`);
+  document.getElementById('sip-bf').style.width=ip+'%';st('sip-b1','Invested '+ip+'%');st('sip-b2','Gains '+gp+'%');
+  const lb=[],ia=[],pa=[];
+  for(let y=0;y<=t;y++){const m=y*12;lb.push('Yr '+y);ia.push(Math.round(mo*m));pa.push(m===0?0:Math.round(mo*((Math.pow(1+i,m)-1)/i)*(1+i)));}
+  sipCh.data.labels=lb;sipCh.data.datasets[0].data=ia;sipCh.data.datasets[1].data=pa;sipCh.update('none');
+  const step=+gs('sip-p'),nm=t*12;
+  let rows='',cnt=0;
+  for(let m=step;m<=nm;m+=step){
+    const port=Math.round(mo*((Math.pow(1+i,m)-1)/i)*(1+i)),inv2=mo*m,gain2=port-inv2,bg=cnt%2?'background:var(--cream);':'';
+    let lbl;
+    if(step===1) lbl=`${MN[(m-1)%12]} ${NY+Math.floor((m-1)/12)}`;
+    else if(step===3){const q=Math.ceil(m/3);lbl=`Y${Math.ceil(m/12)} Q${((q-1)%4)+1}`;}
+    else if(step===6){const h=Math.ceil(m/6);lbl=`Y${Math.ceil(m/12)} H${((h-1)%2)+1}`;}
+    else lbl=`Year ${Math.round(m/12)}`;
+    rows+=`<tr style="${bg}"><td style="color:var(--muted)">${lbl}</td><td class="r">${fI(inv2)}</td><td class="r acc">${fI(gain2)}</td><td class="r">${fI(port)}</td></tr>`;
+    cnt++;
+  }
+  document.getElementById('sip-tb').innerHTML=rows;
+}
+bind('sip-m','sip-mT',uSIP);bind('sip-r','sip-rT',uSIP);bind('sip-t','sip-tT',uSIP);
+const sipP=document.getElementById('sip-p');if(sipP)sipP.addEventListener('change',uSIP);
+
+// 8. SWP
+let swpCh=null;
+function uSWP(){
+  const corpus0=gv('swp-c'),withdraw=gv('swp-w2'),rA=gv('swp-rt'),yrs=Math.max(1,gv('swp-y'));
+  if(!corpus0||!withdraw) return;
+  const r=rA/(12*100);
+  let bal=corpus0,months=0,totalW=0,totalR=0,rows=[],labels=[fI(corpus0)],balArr=[Math.round(corpus0)],maxM=yrs*12;
+  for(let m=1;m<=maxM&&bal>0;m++){
+    const ret=bal*r;bal+=ret-withdraw;totalW+=withdraw;totalR+=ret;
+    if(bal<=0){months=m;bal=0;break;}
+    months=m;
+    if(m%12===0){labels.push('Yr '+m/12);balArr.push(Math.round(bal));rows.push({yr:m/12,open:bal+withdraw*12-ret*12,ret:ret*12,w:withdraw*12,close:bal});}
+  }
+  st('swp-d',bal<=0?`${months} months`:`${yrs} yrs+`);
+  st('swp-ds',(months/12).toFixed(1)+' years');
+  st('swp-w',fI(totalW));st('swp-ws',`${months} withdrawals`);
+  st('swp-r',fI(totalR));st('swp-f',fI(Math.max(0,bal)));
+  st('swp-fs',bal>0?'corpus remaining':'fully depleted');
+  st('swp-nt',bal<=0?`Corpus depletes in ${months} months (${(months/12).toFixed(1)} years)`:`After ${yrs} years: ${fI(bal)} remains`);
+  if(!swpCh){swpCh=mkCh('swp-ch',[{label:'Corpus',data:[],borderColor:'#185FA5',backgroundColor:'rgba(24,95,165,0.1)',fill:true,tension:0.3,pointRadius:2,borderWidth:2}]);}
+  swpCh.data.labels=labels;swpCh.data.datasets[0].data=balArr;swpCh.update('none');
+  document.getElementById('swp-tb').innerHTML=rows.map((row,i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td style="color:var(--muted)">Year ${row.yr}</td><td class="r">${fI(row.open)}</td><td class="r grn">${fI(row.ret)}</td><td class="r acc">${fI(row.w)}</td><td class="r ${row.close<=0?'red':''}">${fI(Math.max(0,row.close))}</td></tr>`).join('');
+}
+
+// 9. FD
+const fdCh=mkCh('fd-ch',[{label:'FD Value',data:[],borderColor:'#c4622d',backgroundColor:'rgba(196,98,45,0.1)',fill:true,tension:0.3,pointRadius:2,borderWidth:2},{label:'Principal',data:[],borderColor:'rgba(15,14,11,0.2)',backgroundColor:'transparent',fill:false,tension:0,borderDash:[5,4],pointRadius:0,borderWidth:1.5}]);
+function uFD(){
+  const P=gv('fd-pT'),r=gv('fd-rT')/100,t=Math.max(0.25,gv('fd-tT')),n=+gs('fd-n');
+  if(!P||!r||!t) return;
+  const mat=P*Math.pow(1+r/n,n*t),int=mat-P,pp=((P/mat)*100).toFixed(1),ip=(100-pp).toFixed(1);
+  st('fd-m',fI(mat));st('fd-i',fI(int));st('fd-p2',fI(P));
+  st('fd-mx',(mat/P).toFixed(2)+'× your deposit');st('fd-ip','+'+((int/P)*100).toFixed(1)+'% gain');st('fd-pp',pp+'% of maturity');
+  document.getElementById('fd-bf').style.width=pp+'%';st('fd-b1','Principal '+pp+'%');st('fd-b2','Interest '+ip+'%');
+  st('fd-fv',`${fI(P)} × (1+${(r*100).toFixed(1)}%/${n})^(${n}×${t})`);
+  const s=Math.min(Math.ceil(t*4),200),lb=[],v=[],p=[];
+  for(let k=0;k<=s;k++){const yr=k/s*t;lb.push(yr.toFixed(1)+'yr');v.push(Math.round(P*Math.pow(1+r/n,n*yr)));p.push(P);}
+  fdCh.data.labels=lb;fdCh.data.datasets[0].data=v;fdCh.data.datasets[1].data=p;fdCh.update('none');
+}
+bind('fd-p','fd-pT',uFD);bind('fd-r','fd-rT',uFD);bind('fd-t','fd-tT',uFD);
+const fdF=document.getElementById('fd-n');if(fdF)fdF.addEventListener('change',uFD);
+
+// 10. PPF
+let ppfCh=null;
+function uPPF(){
+  const annual=Math.min(gv('ppf-a'),150000),r=gv('ppf-r')/100,yrs=Math.max(15,gv('ppf-y'));
+  let bal=0,totalInv=0,rows=[],labels=[],balArr=[],invArr=[],cum=0;
+  for(let y=1;y<=yrs;y++){
+    const open=bal;bal+=annual;const int=bal*r;bal+=int;totalInv+=annual;cum+=annual;
+    labels.push('Yr '+y);balArr.push(Math.round(bal));invArr.push(cum);
+    rows.push({y,open,annual,int,close:bal});
+  }
+  const int=bal-totalInv;
+  st('ppf-m',fI(bal));st('ppf-in',fI(totalInv));st('ppf-i',fI(int));
+  st('ppf-mx',(bal/totalInv).toFixed(2)+'× invested');
+  st('ppf-is',((int/totalInv)*100).toFixed(1)+'% gain');
+  st('ppf-ip',((int/bal)*100).toFixed(1)+'% of maturity');
+  st('ppf-tx',fI(Math.min(annual,150000)));
+  if(!ppfCh){ppfCh=mkCh('ppf-ch',[{label:'Corpus',data:[],borderColor:'#1a6b3c',backgroundColor:'rgba(26,107,60,0.1)',fill:true,tension:0.3,pointRadius:2,borderWidth:2},{label:'Invested',data:[],borderColor:'rgba(15,14,11,0.2)',backgroundColor:'transparent',fill:false,tension:0,borderDash:[5,4],pointRadius:0,borderWidth:1.5}]);}
+  ppfCh.data.labels=labels;ppfCh.data.datasets[0].data=balArr;ppfCh.data.datasets[1].data=invArr;ppfCh.update('none');
+  document.getElementById('ppf-tb').innerHTML=rows.map((row,i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td style="color:var(--muted)">${row.y}</td><td class="r">${fI(row.open)}</td><td class="r">${fI(row.annual)}</td><td class="r acc">${fI(row.int)}</td><td class="r grn">${fI(row.close)}</td></tr>`).join('');
+}
+
+// 11. ROI / CAGR
+const roiCh=mkCh('roi-ch',[{label:'Value',data:[],borderColor:'#c4622d',backgroundColor:'rgba(196,98,45,0.08)',fill:true,tension:0.3,pointRadius:3,borderWidth:2},{label:'Cost',data:[],borderColor:'rgba(15,14,11,0.25)',backgroundColor:'transparent',fill:false,tension:0,borderDash:[5,4],pointRadius:0,borderWidth:1.5}]);
+function uROI(){
+  const init=gv('roi-iT'),fin=gv('roi-fT'),t=Math.max(0.1,gv('roi-tT'));
+  if(!init||!fin||!t) return;
+  const net=fin-init,roi=(net/init)*100,cagr=(Math.pow(fin/init,1/t)-1)*100;
+  const cp=((init/Math.max(fin,init))*100).toFixed(1);
+  st('roi-r',roi.toFixed(2)+'%');st('roi-n',fI(net));st('roi-c',cagr.toFixed(2)+'%');st('roi-f2',fI(fin));
+  st('roi-ns',net>=0?'profit':'loss');
+  document.getElementById('roi-bf').style.width=Math.min(100,+cp)+'%';st('roi-b1','Cost '+cp+'%');st('roi-b2','Profit '+(100-cp).toFixed(1)+'%');
+  const s=Math.min(Math.ceil(t),50),lb=[],v=[],c=[];
+  for(let k=0;k<=s;k++){const f=k/s*t;lb.push(f.toFixed(1)+'yr');v.push(Math.round(init*Math.pow(fin/init,k/s)));c.push(Math.round(init));}
+  roiCh.data.labels=lb;roiCh.data.datasets[0].data=v;roiCh.data.datasets[1].data=c;roiCh.update('none');
+}
+bind('roi-i','roi-iT',uROI);bind('roi-f','roi-fT',uROI);bind('roi-t','roi-tT',uROI);
+// 12. INCOME TAX
+function calcSlabTax(income,slabs){let tax=0,prev=0;for(const [lim,rate] of slabs){if(income>prev){tax+=(Math.min(income,lim)-prev)*rate;prev=lim;}}return tax;}
+const NEW_SLABS=[[400000,0],[800000,0.05],[1200000,0.10],[1600000,0.15],[2000000,0.20],[2400000,0.25],[Infinity,0.30]];
+const OLD_SLABS_REG=[[250000,0],[500000,0.05],[1000000,0.20],[Infinity,0.30]];
+
+function uTax(){
+  const gross=gv('tax-inc');
+  const c80=Math.min(gv('tax-80c'),150000),c80d=Math.min(gv('tax-80d'),75000),chra=gv('tax-hra'),cother=gv('tax-o');
+  const stdNew=75000,stdOld=50000;
+  const taxableNew=Math.max(0,gross-stdNew);
+  let taxNew=calcSlabTax(taxableNew,NEW_SLABS);
+  if(taxableNew<=1200000) taxNew=0;
+  taxNew=taxNew*1.04;
+  const totalDedOld=stdOld+c80+c80d+chra+cother;
+  const taxableOld=Math.max(0,gross-totalDedOld);
+  let taxOld=calcSlabTax(taxableOld,OLD_SLABS_REG);
+  if(taxableOld<=500000&&taxOld<=12500) taxOld=0;
+  taxOld=taxOld*1.04;
+  const bestRegime=taxNew<=taxOld?'New':'Old';
+  const saved=Math.abs(taxNew-taxOld);
+  st('tax-rec',bestRegime+' Regime');st('tax-rs',`${bestRegime} saves ${fI(saved)}`);
+  st('tax-n',fI(taxNew));st('tax-ns',`Taxable: ${fI(taxableNew)}`);
+  st('tax-o',fI(taxOld));st('tax-os',`Taxable: ${fI(taxableOld)}`);
+  st('tax-sv',fI(saved));
+  document.getElementById('tax-cmp').innerHTML=`<table style="width:100%;border-collapse:collapse;font-size:12px;"><thead><tr><th style="text-align:left;padding:7px;background:var(--ink);color:var(--paper);">Particulars</th><th style="text-align:right;padding:7px;background:var(--ink);color:var(--paper);">New (₹)</th><th style="text-align:right;padding:7px;background:var(--ink);color:var(--paper);">Old (₹)</th></tr></thead><tbody><tr><td style="padding:6px 8px">Gross income</td><td class="r">${fI(gross)}</td><td class="r">${fI(gross)}</td></tr><tr style="background:var(--cream)"><td style="padding:6px 8px">Std. deduction</td><td class="r">(${fI(stdNew)})</td><td class="r">(${fI(stdOld)})</td></tr><tr><td style="padding:6px 8px">80C+80D+HRA+other</td><td class="r">N/A</td><td class="r">(${fI(c80+c80d+chra+cother)})</td></tr><tr style="background:var(--cream)"><td style="padding:6px 8px">Taxable income</td><td class="r">${fI(taxableNew)}</td><td class="r">${fI(taxableOld)}</td></tr><tr><td style="padding:6px 8px"><strong>Tax (incl. cess)</strong></td><td class="r" style="${bestRegime==='New'?'font-weight:700;color:var(--green)':''}">${fI(taxNew)}</td><td class="r" style="${bestRegime==='Old'?'font-weight:700;color:var(--green)':''}">${fI(taxOld)}</td></tr></tbody></table>`;
+  const rows=[['Gross annual income',gross,gross],['Standard deduction',stdNew,stdOld],['80C',0,c80],['80D',0,c80d],['HRA',0,chra],['Other deductions',0,cother],['Taxable income',taxableNew,taxableOld],['Tax (before cess)',taxNew/1.04,taxOld/1.04],['4% Cess',taxNew-taxNew/1.04,taxOld-taxOld/1.04],['Total tax payable',taxNew,taxOld]];
+  document.getElementById('tax-tb').innerHTML=rows.map(([l,n,o],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${fI(n)}</td><td class="r">${fI(o)}</td></tr>`).join('');
+}
+
+// 13. TDS
+const TDS_RATES={'192':{ind:'slab',co:'slab',nri:'slab',thr:0,desc:'Salary — TDS as per slab',n:'TDS computed annually as per slab.'},'193':{ind:10,co:10,nri:30,thr:5000,desc:'Interest on securities',n:'Threshold ₹5,000 per FY.'},'194A':{ind:10,co:10,nri:30,thr:40000,desc:'Interest other than securities',n:'₹50K threshold for senior citizens.'},'194C':{ind:1,co:2,nri:2,thr:30000,desc:'Contractor / sub-contractor',n:'₹30K per payment OR ₹1L aggregate.'},'194D':{ind:5,co:10,nri:20,thr:15000,desc:'Insurance commission',n:'Threshold ₹15K per year.'},'194H':{ind:5,co:5,nri:5,thr:15000,desc:'Commission / brokerage',n:'Threshold ₹15K per year.'},'194I':{ind:2,co:2,nri:30,thr:240000,desc:'Rent — P&M / furniture',n:'2% on plant/machinery rent.'},'194Ib':{ind:10,co:10,nri:30,thr:240000,desc:'Rent — land / building',n:'10% on land/building rent.'},'194IA':{ind:1,co:1,nri:1,thr:5000000,desc:'Transfer of immovable property',n:'Threshold ₹50L. Buyer deducts.'},'194IB':{ind:5,co:5,nri:5,thr:50000,desc:'Rent by individual / HUF',n:'Monthly rent >₹50K.'},'194J':{ind:10,co:10,nri:10,thr:30000,desc:'Professional / technical fees',n:'Technical: 2%.'},'194N':{ind:2,co:2,nri:2,thr:10000000,desc:'Cash withdrawal',n:'₹1Cr threshold.'},'194O':{ind:1,co:1,nri:1,thr:500000,desc:'E-commerce',n:'Threshold ₹5L.'},'194Q':{ind:0.1,co:0.1,nri:0.1,thr:5000000,desc:'Purchase of goods',n:'Buyer TO >₹10Cr.'},'195':{ind:20,co:20,nri:20,thr:0,desc:'Payment to non-resident',n:'Per DTAA or 20%.'}};
+function uTDS(){
+  const sec=gs('tds-sec'),amt=gv('tds-val'),dtype=gs('tds-dtype'),pan=gs('tds-panf')==='y';
+  const r=TDS_RATES[sec]; if(!r) return;
+  let rate=r[dtype]==='slab'?30:r[dtype];
+  let note=r[dtype]==='slab'?'Slab rate applied (~30% est).':'';
+  if(!pan){rate=Math.max(rate,20);note+=' Sec 206AA: higher of normal rate or 20%.';}
+  const isUnder=r.thr&&amt<r.thr;
+  const tdsAmt=isUnder?0:(amt*rate)/100;
+  st('tds-amt',fI(tdsAmt));st('tds-rs',isUnder?`Below ₹${r.thr.toLocaleString('en-IN')} threshold`:`@ ${rate}% on ₹${fI(amt)}`);
+  st('tds-net',fI(amt-tdsAmt));
+  st('tds-eff',amt>0?((tdsAmt/amt)*100).toFixed(2)+'%':'0%');
+  st('tds-effs',isUnder?'TDS not applicable':`${rate}% applied`);
+  st('tds-pan',pan?'PAN furnished':'No PAN — 206AA');
+  document.getElementById('tds-ref').innerHTML=`<div style="display:grid;gap:.5rem;font-size:12px;"><div><strong>${sec}</strong> — ${r.desc}</div><div>Threshold: <strong>${r.thr?'₹'+r.thr.toLocaleString('en-IN'):'No threshold'}</strong></div><div>Individual/HUF: <strong>${r.ind==='slab'?'Slab':r.ind+'%'}</strong></div><div>Company/Other: <strong>${r.co==='slab'?'Slab':r.co+'%'}</strong></div><div>NRI: <strong>${r.nri==='slab'?'Slab':r.nri+'%'}</strong></div><div style="font-size:11px;color:var(--muted);font-style:italic;margin-top:6px;">${r.n}</div></div>`;
+  const rows=[['Section',sec],['Nature',r.desc],['Gross payment',fI(amt)],['Threshold',r.thr?'₹'+r.thr.toLocaleString('en-IN'):'None'],['Rate applied',rate+'%'],['TDS amount',fI(tdsAmt)],['Net payment',fI(amt-tdsAmt)]];
+  document.getElementById('tds-tb').innerHTML=rows.map(([l,v],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${v}</td></tr>`).join('');
+}
+
+// 14. ADVANCE TAX
+function uAdv(){
+  const inc=gv('adv-inc'),reg=gs('adv-reg'),ded=gv('adv-ded'),tds=gv('adv-tds');
+  const stdDed=reg==='new'?75000:0;
+  const applDed=reg==='new'?stdDed:ded;
+  const taxable=Math.max(0,inc-applDed);
+  const slabs=reg==='new'?NEW_SLABS:OLD_SLABS_REG;
+  let baseTax=calcSlabTax(taxable,slabs);
+  let rebate=reg==='new'?(taxable<=1200000?Math.min(baseTax,60000):0):(taxable<=500000?Math.min(baseTax,12500):0);
+  const taxAR=Math.max(0,baseTax-rebate);
+  const cess=taxAR*0.04;
+  const total=taxAR+cess;
+  const netAdv=Math.max(0,total-tds);
+  st('adv-tot',fI(total));st('adv-ts',`Taxable: ${fI(taxable)}`);
+  st('adv-at',fI(netAdv));
+  const ins=[['15 Jun '+(NY-1),15],['15 Sep '+(NY-1),45],['15 Dec '+(NY-1),75],['15 Mar '+NY,100]];
+  let prev=0,rows=[];
+  ins.forEach(([d,p])=>{const cum=Math.round(netAdv*p/100),inst=cum-prev;rows.push([d,p+'%',cum,inst]);prev=cum;});
+  document.getElementById('adv-tb').innerHTML=rows.map(([d,p,cum,inst],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${d}</td><td class="r">${p}</td><td class="r">${fI(cum)}</td><td class="r acc">${fI(inst)}</td></tr>`).join('');
+  uAdv234();
+}
+function uAdv234(){
+  const assessed=gv('adv-self'),paid=gv('adv-paid'),mths=Math.max(0,Math.round(gv('adv-mths')));
+  if(!assessed){st('adv-234b','₹0');st('adv-234c','₹0');return;}
+  const ninetyPct=assessed*0.9,shortfall=Math.max(0,ninetyPct-paid),int234b=shortfall*0.01*Math.max(1,mths);
+  st('adv-234b',fI(int234b));
+  st('adv-234c','—');
+}
+
+// 15. GST
+function uGST(){
+  const mode=gs('gst-m'),val=gv('gst-v'),rate=gv('gst-r');
+  let pre,post,gstAmt;
+  if(mode==='add'){pre=val;gstAmt=val*rate/100;post=val+gstAmt;}
+  else{post=val;pre=val/(1+rate/100);gstAmt=post-pre;}
+  const cgst=gstAmt/2,sgst=gstAmt/2;
+  st('gst-a',fI(gstAmt));st('gst-as',`@ ${rate}%`);
+  st('gst-pre',fI(pre));st('gst-post',fI(post));
+  st('gst-cs',`${fI(cgst)} + ${fI(sgst)}`);
+  document.getElementById('gst-sum').innerHTML=`<div style="display:grid;gap:.5rem;">${[['Pre-GST',fI(pre)],['GST ('+rate+'%)',fI(gstAmt)],['CGST ('+rate/2+'%)',fI(cgst)],['SGST ('+rate/2+'%)',fI(sgst)],['IGST ('+rate+'%)',fI(gstAmt)],['Post-GST',fI(post)]].map(([l,v])=>`<div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:12px;"><span style="color:var(--muted)">${l}</span><strong>${v}</strong></div>`).join('')}</div>`;
+  const rows=[['Pre-GST value',fI(pre)],['GST Rate',rate+'%'],['GST Amount',fI(gstAmt)],['CGST',fI(cgst)],['SGST',fI(sgst)],['IGST',fI(gstAmt)],['Post-GST value',fI(post)]];
+  document.getElementById('gst-tb').innerHTML=rows.map(([l,v],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${v}</td></tr>`).join('');
+}
+
+// 16. GST LATE FEE
+(function(){const t=new Date(),p=x=>String(x).padStart(2,'0');const d20=new Date(t.getFullYear(),t.getMonth()-1,20);const dl=document.getElementById('gl-due');if(dl) dl.value=`${d20.getFullYear()}-${p(d20.getMonth()+1)}-${p(d20.getDate())}`;const df=document.getElementById('gl-file');if(df) df.value=`${t.getFullYear()}-${p(t.getMonth()+1)}-${p(t.getDate())}`;})();
+
+function uGL(){
+  const ret=gs('gl-ret'),isNil=gs('gl-nil')==='y',tax=gv('gl-tax'),due=gs('gl-due'),file=gs('gl-file');
+  if(!due||!file){document.getElementById('gl-tb').innerHTML='';st('gl-fee','₹0');return;}
+  const dD=new Date(due),fD=new Date(file);
+  const days=Math.max(0,Math.ceil((fD-dD)/86400000));
+  if(days===0){st('gl-fee','₹0');st('gl-c','₹0');st('gl-s','₹0');st('gl-int','₹0');st('gl-fees','Filed on time');document.getElementById('gl-tb').innerHTML=`<tr><td>Days late</td><td class="r">0</td></tr><tr><td>Late fee</td><td class="r">₹0 — filed on time</td></tr>`;return;}
+  let ppd=ret==='9'?100:(isNil?10:25);
+  const maxEach=ret==='9'?tax*0.0025:(isNil?500:(ret==='3b'?5000:5000));
+  const cgst=Math.min(days*ppd,maxEach),sgst=cgst,total=cgst+sgst;
+  const int50=tax*0.18*days/365;
+  st('gl-fee',fI(total));st('gl-c',fI(cgst));st('gl-s',fI(sgst));st('gl-int',fI(int50));
+  st('gl-fees',`${days} days late`);st('gl-is',`@ 18% × ${days}/365 days`);
+  document.getElementById('gl-ref').innerHTML=`<div style="display:grid;gap:.4rem;font-size:12px;"><div>Return: <strong>${ret==='3b'?'GSTR-3B':ret==='1'?'GSTR-1':'GSTR-9'}</strong></div><div>Per day fee: ₹${ppd} CGST + ₹${ppd} SGST</div><div>Cap (each): ${ret==='9'?'0.25% of turnover':isNil?'₹500':'₹5,000'}</div><div>Interest: 18% p.a. on tax (Sec 50)</div><div style="font-size:11px;color:var(--muted);font-style:italic;margin-top:6px;">Late fee + interest as per CGST Act sections 47 &amp; 50.</div></div>`;
+  const rows=[['Days late',days+' days'],['CGST late fee',fI(cgst)],['SGST late fee',fI(sgst)],['Total late fee',fI(total)],['Interest u/s 50 (18%)',fI(int50)],['Total payable',fI(total+int50)]];
+  document.getElementById('gl-tb').innerHTML=rows.map(([l,v],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${v}</td></tr>`).join('');
+}
+
+// 17. HRA
+function uHRA(){
+  const basic=gv('hra-bas'),da=gv('hra-da'),actual=gv('hra-act'),rent=gv('hra-rent'),pct=gv('hra-city');
+  const basicDA=basic+da;
+  const c1=actual,c2=basicDA*pct/100,c3=Math.max(0,rent-basicDA*0.1);
+  const exempt=Math.min(c1,c2,c3);
+  const taxable=actual-exempt;
+  let binding=exempt===c1?'Actual HRA':exempt===c2?`${pct}% of Basic+DA`:'Rent − 10% of Basic+DA';
+  st('hra-e',fI(exempt*12));st('hra-t',fI(taxable*12));
+  st('hra-sv',fI(exempt*12*0.30));st('hra-b',binding);
+  st('hra-ts',`${fI(actual*12)} HRA received annually`);
+  document.getElementById('hra-cond').innerHTML=`<div style="display:grid;gap:.6rem;margin-top:.5rem;">${[[1,'Actual HRA',fI(c1),c1],[2,`${pct}% of Basic+DA`,fI(c2),c2],[3,'Rent − 10% of (Basic+DA)',fI(c3),c3]].map(([n,l,v,val])=>`<div style="padding:.6rem;border-radius:7px;background:${val===exempt?'#e8f5ee':'var(--cream)'};border:1px solid ${val===exempt?'#a8d5bc':'var(--border)'}"><p style="font-size:10px;color:var(--muted);margin-bottom:2px;">Condition ${n}</p><p style="font-size:11px;margin-bottom:2px;">${l}</p><p style="font-family:'DM Mono',monospace;font-size:13px;color:${val===exempt?'var(--green)':'var(--ink)'};">${v}/mo ${val===exempt?'✓':''}</p></div>`).join('')}</div>`;
+  const rows=[['Basic',fI(basic),fI(basic*12)],['DA',fI(da),fI(da*12)],['HRA received',fI(actual),fI(actual*12)],['Rent paid',fI(rent),fI(rent*12)],['Cond. 1 — Actual HRA',fI(c1),fI(c1*12)],[`Cond. 2 — ${pct}% Basic+DA`,fI(c2),fI(c2*12)],['Cond. 3 — Rent−10%',fI(c3),fI(c3*12)],['HRA exempt (least)',fI(exempt),fI(exempt*12)],['Taxable HRA',fI(taxable),fI(taxable*12)]];
+  document.getElementById('hra-tb').innerHTML=rows.map(([l,m,a],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${m}</td><td class="r">${a}</td></tr>`).join('');
+}
+// 18. DEPRECIATION
+const DEP_CA=[{g:'Buildings',n:'Buildings — RCC Frame',life:60},{g:'Buildings',n:'Buildings — Other than RCC',life:30},{g:'Buildings',n:'Buildings — Temporary',life:3},{g:'Plant & Machinery',n:'Plant & Machinery — General',life:15},{g:'Plant & Machinery',n:'Plant & Machinery — Continuous Process',life:25},{g:'IT',n:'Computers & Data Processing',life:3},{g:'IT',n:'Servers & Networking',life:6},{g:'Furniture',n:'Furniture & Fittings',life:10},{g:'Vehicles',n:'Motor Vehicles — Not for Hire',life:8},{g:'Vehicles',n:'Motor Buses / Taxis (Hire)',life:4},{g:'Office',n:'Office Equipment',life:5},{g:'Office',n:'Electrical Installations',life:10},{g:'Vehicles',n:'Ships — Ocean-going',life:25},{g:'Vehicles',n:'Aircraft',life:20}];
+const DEP_IT=[{g:'Buildings',n:'Residential Buildings',rate:5},{g:'Buildings',n:'Non-Residential Buildings',rate:10},{g:'Furniture',n:'Furniture & Fittings',rate:10},{g:'P&M',n:'Plant & Machinery — General',rate:15},{g:'P&M',n:'Motor Vehicles — Personal/Business',rate:15},{g:'Ships',n:'Ships & Vessels',rate:20},{g:'Intangibles',n:'Intangible Assets',rate:25},{g:'P&M',n:'New Commercial Vehicle (post Aug-2019)',rate:30},{g:'P&M',n:'Motor Vehicles — Hire Business',rate:30},{g:'Aviation',n:'Aircraft & Helicopters',rate:40},{g:'IT',n:'Computers & Peripherals / Software',rate:40}];
+(function(){const dt=document.getElementById('dep-date');if(dt) dt.value=new Date().toISOString().split('T')[0];})();
+
+function populateDepCat(){
+  const act=gs('dep-act'),sel=document.getElementById('dep-cat');
+  if(!sel) return;
+  if(sel.dataset.act===act) return;
+  sel.dataset.act=act;
+  const data=act==='ca'?DEP_CA:DEP_IT;
+  const grps={};
+  data.forEach((a,i)=>{(grps[a.g]=grps[a.g]||[]).push({...a,i});});
+  sel.innerHTML='<option value="">— Select —</option>'+Object.entries(grps).map(([g,items])=>`<optgroup label="${g}">${items.map(a=>`<option value="${a.i}">${a.n}</option>`).join('')}</optgroup>`).join('');
+}
+
+function uDep(){
+  populateDepCat();
+  const act=gs('dep-act'),mth=gs('dep-mth'),cost=gv('dep-cst'),res=gv('dep-res'),life=gv('dep-life'),catIdx=gs('dep-cat');
+  const dV=gs('dep-date');
+  if(!cost||!dV) return;
+  const data=act==='ca'?DEP_CA:DEP_IT;
+  const cat=catIdx?data[+catIdx]:data[3];
+  let rate,rLabel;
+  if(act==='ca'){
+    const useLife=life||cat.life;
+    if(mth==='slm'){rate=(cost-res)/(cost*useLife);rLabel=(rate*100).toFixed(2)+'% SLM';}
+    else{rate=res>0?1-Math.pow(res/cost,1/useLife):0.10;rLabel=(rate*100).toFixed(2)+'% WDV';}
+  } else {
+    rate=cat.rate/100; rLabel=cat.rate+'% WDV';
+  }
+  const yrs=Math.min(act==='ca'?(life||cat.life):20,30);
+  let owdv=cost,accD=0,rows=[];
+  const pdate=new Date(dV);
+  const fyEnd=pdate.getMonth()<3?new Date(pdate.getFullYear(),2,31):new Date(pdate.getFullYear()+1,2,31);
+  const halfYrFlag=(fyEnd-pdate)/86400000<180;
+  for(let yr=1;yr<=yrs;yr++){
+    if(act==='ca'&&owdv<=res+0.5) break;
+    let d;
+    if(act==='ca'){
+      if(mth==='slm'){d=rate*cost; if(yr===1&&halfYrFlag) d*=0.5; if(owdv-d<res) d=owdv-res;}
+      else{d=owdv*rate; if(yr===1&&halfYrFlag) d*=0.5; if(owdv-d<res) d=owdv-res;}
+    } else {
+      d=owdv*rate; if(yr===1&&halfYrFlag) d*=0.5;
+    }
+    const cw=Math.max(owdv-d,act==='ca'?res:0);
+    accD+=d;
+    rows.push({yr,fy:`FY ${fyEnd.getFullYear()-1+yr-1}-${String(fyEnd.getFullYear()+yr-1).slice(2)}`,op:owdv,d,cw,accD,er:owdv?(d/owdv)*100:0});
+    owdv=cw;
+    if(act==='ca'&&owdv<=res+0.5) break;
+  }
+  st('dep-cost',fI(cost));st('dep-cs',cat.n);
+  st('dep-tot',fI(accD));st('dep-ts',((accD/cost)*100).toFixed(1)+'% of cost');
+  st('dep-wdv',fI(owdv));st('dep-ws',`Residual: ${fI(res)}`);
+  st('dep-rate',rLabel);st('dep-rs',act==='ca'?'Schedule II':'Sec 32 IT Act');
+  const visible=rows.slice(0,20);
+  const mx=Math.max(...visible.map(r=>r.d));
+  document.getElementById('dep-chart').innerHTML=visible.map(r=>{const dp=mx?(r.d/mx*100).toFixed(1):0;return `<div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;font-size:11px;font-family:'DM Mono',monospace;"><span style="width:60px;color:var(--muted);">${r.fy.replace(/FY |CY /,'')}</span><span style="flex:1;background:var(--cream);height:10px;border-radius:5px;overflow:hidden;"><span style="display:block;height:100%;background:var(--accent);width:${dp}%;"></span></span><span style="width:80px;text-align:right;">${fI(r.d)}</span></div>`;}).join('');
+  document.getElementById('dep-tb').innerHTML=rows.map((r,i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${r.yr}</td><td>${r.fy}</td><td class="r">${fI(r.op)}</td><td class="r acc">${fI(r.d)}</td><td class="r">${r.er.toFixed(2)}%</td><td class="r">${fI(r.cw)}</td><td class="r" style="color:var(--muted)">${fI(r.accD)}</td></tr>`).join('');
+}
+
+// 19. BUSINESS VALUATION
+let bvMethod='dcf';
+function setBVM(m){
+  bvMethod=m;
+  ['dcf','ev','bk'].forEach(x=>{const b=document.getElementById('bvm-'+x);if(b) b.classList.toggle('on',x===m);const p=document.getElementById('bv-'+x+'-panel');if(p) p.style.display=x===m?'':'none';});
+  uBV();
+}
+function uBV(){
+  const fcf=gv('bv-fcf'),gr=gv('bv-gr')/100,tg=gv('bv-tg')/100,wacc=gv('bv-wacc')/100,yrs=Math.max(1,gv('bv-yrs')),debt=gv('bv-debt');
+  let pvSum=0,fcffCur=fcf;
+  for(let y=1;y<=yrs;y++){fcffCur*=(1+gr);pvSum+=fcffCur/Math.pow(1+wacc,y);}
+  const tvFCFF=fcffCur*(1+tg);
+  const tv=wacc>tg?tvFCFF/(wacc-tg):0;
+  const pvTV=tv/Math.pow(1+wacc,yrs);
+  const evDCF=pvSum+pvTV,equityDCF=evDCF-debt;
+  const ebitda=gv('bv-ebitda'),mult=gv('bv-mult'),evDebt=gv('bv-ev-debt');
+  const evRaw=ebitda*mult,evEquity=evRaw-evDebt;
+  const assets=gv('bv-assets'),liab=gv('bv-liab'),intan=gv('bv-intan'),pbv=gv('bv-pbv');
+  const nav=assets-liab-intan,navP=nav*pbv;
+  let val=0,vsub='';
+  if(bvMethod==='dcf'){val=equityDCF;vsub='DCF method';}
+  else if(bvMethod==='ev'){val=evEquity;vsub='EV/EBITDA method';}
+  else{val=navP;vsub='Book Value method';}
+  st('bv-val',fI(val));st('bv-vs',vsub);
+  st('bv-dcf',fI(equityDCF));st('bv-ev',fI(evEquity));st('bv-bk',fI(navP));
+  let rows=[];
+  if(bvMethod==='dcf'){
+    rows=[['Base FCF',fI(fcf)],['Growth rate (yrs 1-'+yrs+')',(gr*100).toFixed(1)+'%'],['Terminal growth',(tg*100).toFixed(1)+'%'],['WACC',(wacc*100).toFixed(1)+'%'],['PV of explicit FCFs',fI(pvSum)],['Terminal value',fI(tv)],['PV of terminal value',fI(pvTV)],['Enterprise value',fI(evDCF)],['Less: Net debt',fI(debt)],['Equity value (DCF)',fI(equityDCF)]];
+  } else if(bvMethod==='ev'){
+    rows=[['EBITDA',fI(ebitda)],['EV/EBITDA multiple',mult+'×'],['Implied Enterprise Value',fI(evRaw)],['Less: Net debt',fI(evDebt)],['Equity value',fI(evEquity)]];
+  } else {
+    rows=[['Total assets',fI(assets)],['Less: Total liabilities',fI(liab)],['Less: Intangibles',fI(intan)],['Net Asset Value (NAV)',fI(nav)],['P/BV multiple',pbv+'×'],['Valuation',fI(navP)]];
+  }
+  document.getElementById('bv-tb').innerHTML=rows.map(([l,v],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${v}</td></tr>`).join('');
+}
+
+// 20. SALARY STRUCTURING
+function uSal(){
+  const basic=gv('sal-bas'),hra=gv('sal-hra'),sp=gv('sal-sp'),lta=gv('sal-lta')/12,epf=gv('sal-epf'),grt=gv('sal-grt'),oth=gv('sal-oth');
+  const c80c=Math.min(gv('sal-80c'),150000),nps=Math.min(gv('sal-nps'),50000),c80d=gv('sal-80d'),hraE=gv('sal-hrae'),empf=gv('sal-empf');
+  const monthlyGross=basic+hra+sp+lta+oth;
+  const annualGross=monthlyGross*12;
+  const ctc=annualGross+epf*12+grt*12;
+  const stdOld=50000;
+  const totalDedOld=stdOld+c80c+nps+c80d+hraE+empf*12;
+  const taxableOld=Math.max(0,annualGross-totalDedOld);
+  let taxOldB=calcSlabTax(taxableOld,OLD_SLABS_REG);
+  if(taxableOld<=500000&&taxOldB<=12500) taxOldB=0;
+  const taxOld=taxOldB*1.04;
+  const stdNew=75000;
+  const taxableNew=Math.max(0,annualGross-stdNew);
+  let taxNewB=calcSlabTax(taxableNew,NEW_SLABS);
+  if(taxableNew<=1200000) taxNewB=0;
+  const taxNew=taxNewB*1.04;
+  const takeHomeOld=annualGross-taxOld-empf*12;
+  const takeHomeNew=annualGross-taxNew-empf*12;
+  const recommended=taxNew<=taxOld?'New':'Old';
+  const saving=Math.abs(taxNew-taxOld);
+  st('sal-ctc',fI(ctc));st('sal-cs','annual cost to company');
+  st('sal-nw',fI(takeHomeNew));st('sal-ns',`Tax: ${fI(taxNew)}`);
+  st('sal-ol',fI(takeHomeOld));st('sal-os',`Tax: ${fI(taxOld)}`);
+  st('sal-sv',fI(saving));
+  document.getElementById('sal-sum').innerHTML=`<div style="display:grid;gap:.4rem;font-size:12px;"><div><strong>Recommended: ${recommended} Regime</strong></div><div>Saves: ${fI(saving)} per year</div><div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);">Monthly gross: ${fI(monthlyGross)}</div><div>Annual gross: ${fI(annualGross)}</div><div>EPF (employee + employer): ${fI(empf*12+epf*12)}</div></div>`;
+  const rows=[['Basic salary',fI(basic),fI(basic*12),'Both','Both'],['HRA',fI(hra),fI(hra*12),'Taxable',`Exempt ${fI(hraE)}`],['Special allowance',fI(sp),fI(sp*12),'Taxable','Taxable'],['LTA',fI(lta),fI(lta*12),'Taxable','Exempt'],['Other allowances',fI(oth),fI(oth*12),'Taxable','Taxable'],['Employer EPF',fI(epf),fI(epf*12),'Tax-free','Tax-free'],['Gratuity',fI(grt),fI(grt*12),'Tax-free','Tax-free'],['Total CTC',fI(ctc/12),fI(ctc),'—','—'],['Standard deduction','—','—',fI(stdNew),fI(stdOld)],['80C investments','—','—','N/A',fI(c80c)],['80D health ins.','—','—','N/A',fI(c80d)],['Total tax','—',fI(taxNew),'—',fI(taxOld)],['Take-home','—',fI(takeHomeNew),'—',fI(takeHomeOld)]];
+  document.getElementById('sal-tb').innerHTML=rows.map(([l,m,a,n,o],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${m}</td><td class="r">${a}</td><td class="r ${recommended==='New'?'grn':''}">${n}</td><td class="r ${recommended==='Old'?'grn':''}">${o}</td></tr>`).join('');
+}
+
+// 21. PARTNERSHIP
+let partners=[{name:'Partner A',capital:500000,working:true,psr:40},{name:'Partner B',capital:300000,working:true,psr:35},{name:'Partner C',capital:200000,working:false,psr:25}];
+
+function renderPP(){
+  document.getElementById('pp-rows').innerHTML=partners.map((p,i)=>`
+    <div style="display:grid;grid-template-columns:1.2fr .8fr .8fr .6fr 30px;gap:.4rem;align-items:center;margin-bottom:.4rem;">
+      <input type="text" value="${p.name}" onchange="partners[${i}].name=this.value;" class="mi" style="background:var(--cream);border:1px solid var(--border);border-radius:7px;padding:5px 8px;font-size:12px;">
+      <input type="number" value="${p.capital}" onchange="partners[${i}].capital=parseFloat(this.value)||0;uPP();" class="mi" style="background:var(--cream);border:1px solid var(--border);border-radius:7px;padding:5px 8px;font-size:12px;" placeholder="Capital">
+      <select onchange="partners[${i}].working=this.value==='true';uPP();" class="fi" style="padding:5px 8px;font-size:11px;"><option value="true" ${p.working?'selected':''}>Working</option><option value="false" ${!p.working?'selected':''}>Sleeping</option></select>
+      <input type="number" value="${p.psr}" onchange="partners[${i}].psr=parseFloat(this.value)||0;uPP();" class="mi" style="background:var(--cream);border:1px solid var(--border);border-radius:7px;padding:5px 8px;font-size:12px;" placeholder="PSR%">
+      <button onclick="rmPP(${i})" style="background:none;border:none;color:#a32d2d;font-size:18px;cursor:pointer;padding:0;">×</button>
+    </div>
+  `).join('');
+}
+function addPP(){partners.push({name:`Partner ${String.fromCharCode(65+partners.length)}`,capital:100000,working:true,psr:0});renderPP();uPP();}
+function rmPP(i){if(partners.length<=2){alert('Min 2 partners');return;} partners.splice(i,1);renderPP();uPP();}
+
+document.addEventListener('change',e=>{if(e.target.id==='pp-rm'){const fr=document.getElementById('pp-fixed-row');if(fr) fr.style.display=e.target.value==='fixed'?'':'none';uPP();}});
+
+function uPP(){
+  const bp=gv('pp-bp'),ir=gv('pp-irate')/100,mode=gs('pp-rm');
+  const totPSR=partners.reduce((s,p)=>s+p.psr,0);
+  if(Math.abs(totPSR-100)>0.01){st('pp-net','PSR ≠ 100%');return;}
+  const totalCap=partners.reduce((s,p)=>s+p.capital,0);
+  const pInt=partners.map(p=>({...p,interest:p.capital*ir}));
+  const totalInt=pInt.reduce((s,p)=>s+p.interest,0);
+  const bpAfterInt=bp-totalInt;
+  let maxRem=bpAfterInt<=0?150000:bpAfterInt<=300000?Math.max(150000,bpAfterInt*0.9):Math.max(150000,300000*0.9)+(bpAfterInt-300000)*0.6;
+  let totRem=mode==='40b'?maxRem:Math.min(gv('pp-fixv'),maxRem);
+  const wPart=pInt.filter(p=>p.working);
+  const wCnt=wPart.length||1;
+  const remEach=totRem/wCnt;
+  const remaining=bp-totalInt-totRem;
+  const final=pInt.map(p=>({...p,remuneration:p.working?remEach:0,profitShare:remaining*(p.psr/100),total:p.interest+(p.working?remEach:0)+remaining*(p.psr/100)}));
+  st('pp-net',fI(remaining));st('pp-ns',`After int. & rem. on ${fI(bp)}`);
+  st('pp-rem',fI(totRem));st('pp-int',fI(totalInt));
+  st('pp-bal',fI(remaining));
+  document.getElementById('pp-tb').innerHTML=final.map((p,i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${p.name}${p.working?' <span class="mb">Wkg</span>':''}</td><td class="r">${fI(p.capital)}</td><td class="r">${fI(p.interest)}</td><td class="r">${p.working?fI(p.remuneration):'—'}</td><td class="r">${fI(p.profitShare)}</td><td class="r grn"><strong>${fI(p.total)}</strong></td></tr>`).join('') + `<tr style="background:var(--ink);color:var(--paper);"><td><strong>Firm Total</strong></td><td class="r">${fI(totalCap)}</td><td class="r">${fI(totalInt)}</td><td class="r">${fI(totRem)}</td><td class="r">${fI(remaining)}</td><td class="r">${fI(final.reduce((s,p)=>s+p.total,0))}</td></tr>`;
+}
+// 22. RATIO ANALYSIS
+function uRatio(){
+  const rev=gv('ra-rev'),cogs=gv('ra-cogs'),ebit=gv('ra-ebit'),net=gv('ra-np'),intExp=gv('ra-int');
+  const cash=gv('ra-cash'),rec=gv('ra-rec'),inv=gv('ra-inv'),cl=gv('ra-cl'),assets=gv('ra-ta'),debt=gv('ra-debt'),eq=gv('ra-eq');
+  const ca=cash+rec+inv;
+  const cR=cl?ca/cl:0,qR=cl?(cash+rec)/cl:0,csR=cl?cash/cl:0;
+  const dE=eq?debt/eq:0,dA=assets?debt/assets:0,iC=intExp?ebit/intExp:0;
+  const gM=rev?((rev-cogs)/rev)*100:0,oM=rev?(ebit/rev)*100:0,nM=rev?(net/rev)*100:0;
+  const roa=assets?(net/assets)*100:0,roe=eq?(net/eq)*100:0,roce=(eq+debt)?(ebit/(eq+debt))*100:0;
+  const card=(label,val,formula,status)=>{const colors={good:'var(--green)',warn:'var(--amber)',bad:'#a32d2d',neutral:'var(--blue)'};const bgs={good:'#e8f5ee',warn:'#fef3c7',bad:'#fbeaea',neutral:'#e6f1fb'};const c=colors[status]||colors.neutral,bg=bgs[status]||bgs.neutral;return `<div style="background:${bg};border:1px solid ${c}33;border-radius:11px;padding:.85rem 1rem;"><p style="font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:${c};margin-bottom:3px;">${label}</p><p style="font-family:'DM Serif Display',serif;font-size:1.4rem;color:${c};line-height:1.1;">${val}</p><p style="font-size:10px;color:${c};opacity:.7;margin-top:3px;">${formula}</p></div>`;};
+  const rs=(v,g,w)=>v>=g?'good':v>=w?'warn':'bad';
+  document.getElementById('ratio-dash').innerHTML=`
+    <div style="margin-bottom:1.2rem;">
+      <p style="font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);">Liquidity Ratios</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.8rem;">
+        ${card('Current Ratio',cR.toFixed(2),'CA ÷ CL',rs(cR,2,1.5))}
+        ${card('Quick Ratio',qR.toFixed(2),'(Cash+Rec) ÷ CL',rs(qR,1,0.7))}
+        ${card('Cash Ratio',csR.toFixed(2),'Cash ÷ CL',rs(csR,0.5,0.3))}
+      </div>
+    </div>
+    <div style="margin-bottom:1.2rem;">
+      <p style="font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);">Solvency Ratios</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.8rem;">
+        ${card('Debt-to-Equity',dE.toFixed(2),'Debt ÷ Equity',dE<=1?'good':dE<=2?'warn':'bad')}
+        ${card('Debt-to-Assets',(dA*100).toFixed(1)+'%','Debt ÷ Assets',dA<=0.4?'good':dA<=0.6?'warn':'bad')}
+        ${card('Interest Coverage',iC.toFixed(2)+'×','EBIT ÷ Interest',rs(iC,3,1.5))}
+      </div>
+    </div>
+    <div>
+      <p style="font-family:'DM Serif Display',serif;font-size:1rem;color:var(--ink);margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);">Profitability Ratios</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.8rem;">
+        ${card('Gross Margin',gM.toFixed(1)+'%','(Rev−COGS)÷Rev',rs(gM,40,20))}
+        ${card('Operating Margin',oM.toFixed(1)+'%','EBIT÷Rev',rs(oM,15,8))}
+        ${card('Net Margin',nM.toFixed(1)+'%','Net÷Rev',rs(nM,10,5))}
+        ${card('ROA',roa.toFixed(1)+'%','Net÷Assets',rs(roa,10,5))}
+        ${card('ROE',roe.toFixed(1)+'%','Net÷Equity',rs(roe,15,10))}
+        ${card('ROCE',roce.toFixed(1)+'%','EBIT÷(E+D)',rs(roce,15,10))}
+      </div>
+    </div>`;
+  const rows=[['Current Ratio',cR.toFixed(2)+'×','>2.0 healthy','Liquidity'],['Quick Ratio',qR.toFixed(2)+'×','>1.0 healthy','Liquidity'],['Cash Ratio',csR.toFixed(2)+'×','>0.5 strong','Liquidity'],['Debt-to-Equity',dE.toFixed(2)+'×','<1 conservative','Solvency'],['Debt-to-Assets',(dA*100).toFixed(1)+'%','<40% conservative','Solvency'],['Interest Coverage',iC.toFixed(2)+'×','>3 healthy','Solvency'],['Gross Margin',gM.toFixed(1)+'%','>40% strong','Profitability'],['Operating Margin',oM.toFixed(1)+'%','>15% strong','Profitability'],['Net Margin',nM.toFixed(1)+'%','>10% strong','Profitability'],['ROA',roa.toFixed(1)+'%','>10% strong','Profitability'],['ROE',roe.toFixed(1)+'%','>15% strong','Profitability'],['ROCE',roce.toFixed(1)+'%','>15% strong','Profitability']];
+  document.getElementById('ra-tb').innerHTML=rows.map(([l,v,b,t],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${v}</td><td>${b}</td><td>${t}</td></tr>`).join('');
+}
+
+// 23. BREAK-EVEN
+let bepCh=null;
+function uBEP(){
+  const fc=gv('bep-fc'),sp=gv('bep-sp'),vc=gv('bep-vc'),sales=gv('bep-ss');
+  if(sp<=vc){st('bep-u','—');st('bep-r','SP must exceed VC');return;}
+  const cm=sp-vc,cmr=(cm/sp)*100;
+  const bepU=Math.ceil(fc/cm),bepR=bepU*sp;
+  const mos=sales>bepU?((sales-bepU)/sales*100):0;
+  st('bep-u',bepU.toLocaleString('en-IN'));st('bep-us','units to BEP');
+  st('bep-r',fI(bepR));st('bep-rs',cmr.toFixed(1)+'% CM ratio');
+  st('bep-cm','₹'+cm.toFixed(0));st('bep-cs','per unit contribution');
+  st('bep-mos',mos.toFixed(1)+'%');st('bep-ms',sales>0?fI((sales-bepU)*sp)+' safety':'enter sales');
+  const maxU=Math.max(bepU*2.5,sales*1.5,100),pts=30,step=maxU/pts;
+  const lbls=[],rev=[],tc=[],fix=[];
+  for(let i=0;i<=pts;i++){const u=Math.round(i*step);lbls.push(u.toLocaleString('en-IN'));rev.push(Math.round(u*sp));tc.push(Math.round(fc+u*vc));fix.push(Math.round(fc));}
+  if(!bepCh){bepCh=mkCh('bep-ch',[{label:'Revenue',data:[],borderColor:'#185FA5',backgroundColor:'transparent',fill:false,tension:0,pointRadius:0,borderWidth:2},{label:'Total Cost',data:[],borderColor:'#c4622d',backgroundColor:'transparent',fill:false,tension:0,pointRadius:0,borderWidth:2,borderDash:[5,4]},{label:'Fixed Cost',data:[],borderColor:'rgba(15,14,11,0.25)',backgroundColor:'transparent',fill:false,tension:0,pointRadius:0,borderWidth:1.5,borderDash:[3,3]}],{plugins:{legend:{display:true,position:'top',labels:{boxWidth:10,font:{size:11}}}}});}
+  bepCh.data.labels=lbls;bepCh.data.datasets[0].data=rev;bepCh.data.datasets[1].data=tc;bepCh.data.datasets[2].data=fix;bepCh.update('none');
+  const start=Math.max(0,bepU-Math.floor(bepU*0.5)),end=Math.round(Math.max(sales,bepU)*1.6),tableStep=Math.max(1,Math.round((end-start)/14));
+  let rows='',cnt=0;
+  for(let u=start;u<=end;u+=tableStep){
+    const r=u*sp,totalCost=fc+u*vc,contrib=u*cm,profit=r-totalCost,isBEP=Math.abs(u-bepU)<=tableStep/2;
+    const bg=isBEP?'background:#fff8e1;font-weight:500;':cnt%2?'background:var(--cream);':'';
+    rows+=`<tr style="${bg}"><td>${u.toLocaleString('en-IN')}${isBEP?' ← BEP':''}</td><td class="r">${fI(r)}</td><td class="r">${fI(totalCost)}</td><td class="r">${fI(contrib)}</td><td class="r ${profit>=0?'grn':'red'}">${fI(profit)}</td></tr>`;
+    cnt++;
+  }
+  document.getElementById('bep-tb').innerHTML=rows;
+}
+
+// 24. CASH FLOW
+const CF_DEFAULT_IN=[180000,160000,200000,220000,250000,190000,210000,230000,240000,260000,200000,300000];
+const CF_DEFAULT_OUT=[120000,130000,140000,110000,150000,160000,130000,140000,150000,170000,140000,200000];
+function buildCF(){
+  let rows='';
+  for(let m=0;m<12;m++){
+    rows+=`<tr id="cf-row-${m}"><td>${MN[m]} ${NY}</td><td class="r"><div class="iu" style="margin:0;display:inline-flex;width:140px;"><span class="iup" style="font-size:10px;">₹</span><input class="mi" type="number" id="cf-in-${m}" value="${CF_DEFAULT_IN[m]}" oninput="uCF()" style="font-size:11px;padding:4px 6px;"></div></td><td class="r"><div class="iu" style="margin:0;display:inline-flex;width:140px;"><span class="iup" style="font-size:10px;">₹</span><input class="mi" type="number" id="cf-out-${m}" value="${CF_DEFAULT_OUT[m]}" oninput="uCF()" style="font-size:11px;padding:4px 6px;"></div></td><td class="r" id="cf-net-${m}"></td><td class="r" id="cf-bal-${m}"></td></tr>`;
+  }
+  document.getElementById('cf-tb').innerHTML=rows;
+}
+
+let cfCh=null;
+function uCF(){
+  const open=gv('cf-op');
+  let bal=open,totalIn=0,totalOut=0,negM=0;
+  const labels=['Open'],balances=[Math.round(open)];
+  for(let m=0;m<12;m++){
+    const inp=gv(`cf-in-${m}`),out=gv(`cf-out-${m}`);
+    const net=inp-out;bal+=net;totalIn+=inp;totalOut+=out;
+    if(bal<0) negM++;
+    const ne=document.getElementById(`cf-net-${m}`),be=document.getElementById(`cf-bal-${m}`);
+    if(ne){ne.textContent=fI(net);ne.style.color=net>=0?'var(--green)':'#a32d2d';}
+    if(be){be.textContent=fI(bal);be.style.color=bal>=0?'var(--ink)':'#a32d2d';}
+    labels.push(MN[m]);balances.push(Math.round(bal));
+  }
+  st('cf-net',fI(totalIn-totalOut));st('cf-ns',totalIn>=totalOut?'✓ Net positive year':'✗ Net negative year');
+  st('cf-in',fI(totalIn));st('cf-out',fI(totalOut));
+  st('cf-cl',fI(bal));st('cf-cls',negM>0?`⚠ ${negM} months negative`:'✓ no shortfall');
+  if(!cfCh){cfCh=mkCh('cf-ch',[{label:'Closing balance',data:[],borderColor:'#185FA5',backgroundColor:'rgba(24,95,165,0.08)',fill:true,tension:0.3,pointRadius:3,borderWidth:2}]);}
+  cfCh.data.labels=labels;cfCh.data.datasets[0].data=balances;cfCh.update('none');
+}
+
+// 25. WORKING CAPITAL
+function uWC(){
+  const cash=gv('wc-ca'),rec=gv('wc-rec'),inv=gv('wc-inv'),oca=gv('wc-oca');
+  const pay=gv('wc-pay'),stl=gv('wc-stl'),ocl=gv('wc-ocl');
+  const rev=gv('wc-rev'),cogs=gv('wc-cogs'),purch=gv('wc-pur');
+  const ca=cash+rec+inv+oca,cl=pay+stl+ocl,nwc=ca-cl;
+  const cr=cl?ca/cl:0,qr=cl?(cash+rec)/cl:0;
+  const dso=rev>0?(rec/rev*365):0,dio=cogs>0?(inv/cogs*365):0,dpo=purch>0?(pay/purch*365):0;
+  const ccc=dso+dio-dpo;
+  st('wc-nwc',fI(nwc));st('wc-ns',nwc>=0?'✓ positive':'✗ negative');
+  st('wc-cr',cr.toFixed(2));st('wc-crs',cr>=2?'✓ healthy':cr>=1.5?'⚠ acceptable':'✗ low');
+  st('wc-qr',qr.toFixed(2));st('wc-qrs',qr>=1?'✓ good':qr>=0.7?'⚠':'✗ low');
+  st('wc-ccc',Math.round(ccc)+' days');st('wc-cccs',ccc<30?'✓ efficient':ccc<60?'⚠ avg':'✗ ties cash');
+  document.getElementById('wc-cycle').innerHTML=`<div class="cf"><p class="st">Operating Cycle</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1rem;">
+    <div class="rc"><p style="text-transform:uppercase;font-size:10px;color:var(--muted);margin-bottom:3px;">Days Inventory</p><p class="rv">${Math.round(dio)} days</p><p class="rs">Inv ÷ COGS × 365</p></div>
+    <div class="rc"><p style="text-transform:uppercase;font-size:10px;color:var(--muted);margin-bottom:3px;">Days Receivable</p><p class="rv">${Math.round(dso)} days</p><p class="rs">Rec ÷ Rev × 365</p></div>
+    <div class="rc"><p style="text-transform:uppercase;font-size:10px;color:var(--muted);margin-bottom:3px;">Days Payable</p><p class="rv">${Math.round(dpo)} days</p><p class="rs">Pay ÷ Purch × 365</p></div>
+    <div class="rc grn"><p style="text-transform:uppercase;font-size:10px;margin-bottom:3px;">Cash Conv. Cycle</p><p class="rv">${Math.round(ccc)} days</p><p class="rs">${ccc<30?'efficient':ccc<60?'avg':'long'}</p></div>
+  </div></div>`;
+  const rows=[['Cash & bank',fI(cash),'Most liquid'],['Receivables',fI(rec),'Collect within DSO'],['Inventory',fI(inv),'Convert to cash'],['Other current assets',fI(oca),''],['Total Current Assets',fI(ca),''],['Accounts payable',fI(pay),'Pay within DPO'],['Short-term borrowings',fI(stl),''],['Other current liab.',fI(ocl),''],['Total Current Liabilities',fI(cl),''],['Net Working Capital',fI(nwc),nwc>=0?'positive':'negative'],['Current Ratio',cr.toFixed(2)+'×',cr>=2?'healthy':cr>=1.5?'acceptable':'low'],['Quick Ratio',qr.toFixed(2)+'×',qr>=1?'good':'tight']];
+  document.getElementById('wc-tb').innerHTML=rows.map(([l,v,n],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${v}</td><td>${n}</td></tr>`).join('');
+}
+
+// 26. CAPITAL GAINS
+function uCG(){
+  const asset=gs('cg-asset'),hold=gs('cg-hold'),buy=gv('cg-buy'),sell=gv('cg-sell'),slab=gv('cg-slab')/100;
+  const gain=sell-buy;
+  let taxRate=0,note='',taxable=gain,exempt=0;
+  if(asset==='eq'){
+    if(hold==='s'){taxRate=0.20;note='STCG @ 20% (post Jul 2024)';}
+    else{exempt=Math.min(gain,125000);taxable=Math.max(0,gain-125000);taxRate=0.125;note='LTCG: First ₹1.25L exempt; 12.5% above';}
+  } else if(asset==='debt'){taxRate=slab;note=`Slab rate (${gv('cg-slab')}%)`;}
+  else{
+    if(hold==='s'){taxRate=slab;note=`STCG slab (${gv('cg-slab')}%)`;}
+    else{taxRate=0.20;note='LTCG @ 20% with indexation';}
+  }
+  const tax=taxable*taxRate;const net=gain-tax;const eff=gain>0?tax/gain*100:0;
+  st('cg-tax',fI(tax));st('cg-ts',note);
+  st('cg-g',fI(gain));st('cg-gs',buy>0?((gain/buy)*100).toFixed(1)+'% return':'');
+  st('cg-n',fI(net));st('cg-ns',`after ${(taxRate*100).toFixed(1)}% tax`);
+  st('cg-eff',eff.toFixed(1)+'%');
+  document.getElementById('cg-ref').innerHTML=`<div style="font-size:11px;line-height:1.7;color:var(--muted);"><strong style="color:var(--ink)">Equity / Equity MF</strong><br>STCG (&lt;12m): 20%<br>LTCG (&gt;12m): ₹1.25L exempt, then 12.5%<br><br><strong style="color:var(--ink)">Debt MF (post Apr 2023)</strong><br>Taxed as per slab<br><br><strong style="color:var(--ink)">Property</strong><br>STCG (&lt;24m): As per slab<br>LTCG (&gt;24m): 20% w/ indexation<br><br><em>Source: Finance Act 2024</em></div>`;
+  const rows=[['Purchase price',fI(buy)],['Sale price',fI(sell)],['Capital gain/loss',fI(gain)],['Exempt amount',fI(exempt)],['Taxable gain',fI(taxable)],['Tax rate',(taxRate*100).toFixed(1)+'%'],['Tax payable',fI(tax)],['4% cess',fI(tax*0.04)],['Total tax (incl. cess)',fI(tax*1.04)],['Net profit after tax',fI(net-tax*0.04)]];
+  document.getElementById('cg-tb').innerHTML=rows.map(([l,v],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${v}</td></tr>`).join('');
+}
+
+// 27. BROKERAGE
+function uBR(){
+  const seg=gs('br-seg'),buy=gv('br-buy'),sell=gv('br-sell'),qty=gv('br-qty');
+  const buyVal=buy*qty,sellVal=sell*qty,turnover=buyVal+sellVal,gross=sellVal-buyVal;
+  let brokBuy=0,brokSell=0;
+  if(seg==='del'){brokBuy=0;brokSell=0;}
+  else if(seg==='int'){brokBuy=Math.min(20,buyVal*0.0003);brokSell=Math.min(20,sellVal*0.0003);}
+  else{brokBuy=20;brokSell=20;}
+  const brok=brokBuy+brokSell;
+  let sttBuy=0,sttSell=0;
+  if(seg==='del'){sttBuy=buyVal*0.001;sttSell=sellVal*0.001;}
+  else if(seg==='int'){sttSell=sellVal*0.00025;}
+  else if(seg==='fno'){sttSell=sellVal*0.0002;}
+  else{sttSell=sellVal*0.000625;}
+  const stt=sttBuy+sttSell;
+  const exchBuy=buyVal*0.0000297,exchSell=sellVal*0.0000297,exchC=exchBuy+exchSell;
+  const sebi=turnover*0.000001;
+  const stamp=seg==='del'?buyVal*0.00015:buyVal*0.00003;
+  const gst=(brok+exchC+sebi)*0.18;
+  const totalCh=brok+stt+exchC+sebi+stamp+gst;
+  const netPnl=gross-totalCh;
+  const beMove=qty>0&&buy>0?totalCh/buyVal*100:0;
+  const bePrice=buy+(totalCh/qty);
+  st('br-pnl',fI(netPnl));st('br-ps',netPnl>=0?'net profit':'net loss');
+  st('br-ch',fI(totalCh));st('br-cs',((totalCh/Math.max(buyVal,1))*100).toFixed(3)+'% of trade');
+  st('br-bk',fI(brok));st('br-bs',brokBuy>0?`₹${brokBuy.toFixed(2)} buy + ₹${brokSell.toFixed(2)} sell`:'Zero brokerage');
+  st('br-be','₹'+bePrice.toFixed(2));st('br-bes',`Move ${beMove.toFixed(3)}% to BE`);
+  document.getElementById('br-sum').innerHTML=`<div style="display:grid;gap:.3rem;font-size:12px;">${[['Buy value',fI(buyVal),''],['Sell value',fI(sellVal),''],['Gross P&L',fI(gross),gross>=0?'grn':'red'],['Total charges',fI(totalCh),'acc'],['Net P&L',fI(netPnl),netPnl>=0?'grn':'red']].map(([l,v,c])=>`<div style="display:flex;justify-content:space-between;padding:.25rem 0;border-bottom:1px solid var(--border);"><span style="color:var(--muted)">${l}</span><strong class="${c}">${v}</strong></div>`).join('')}</div>`;
+  const rows=[['Brokerage',fI(brokBuy),fI(brokSell),fI(brok)],['STT',fI(sttBuy),fI(sttSell),fI(stt)],['Exchange charges',fI(exchBuy),fI(exchSell),fI(exchC)],['SEBI charges',fI(sebi/2),fI(sebi/2),fI(sebi)],['Stamp duty',fI(stamp),fI(0),fI(stamp)],['GST (18%)',fI(gst/2),fI(gst/2),fI(gst)],['Total charges',fI(totalCh/2),fI(totalCh/2),fI(totalCh)]];
+  document.getElementById('br-tb').innerHTML=rows.map(([l,b,s,t],i)=>`<tr style="${i%2?'background:var(--cream);':''}"><td>${l}</td><td class="r">${b}</td><td class="r">${s}</td><td class="r ${i===rows.length-1?'acc':''}">${t}</td></tr>`).join('');
+}
+
+// 28. STOCK AVERAGE
+let saLots=[{qty:100,price:250},{qty:50,price:220}];
+function renderSA(){
+  document.getElementById('sa-lots').innerHTML=saLots.map((lot,i)=>`<div style="background:var(--cream);border-radius:9px;padding:.7rem;border:1px solid var(--border);"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;"><p style="font-size:11px;font-weight:600;">Lot ${i+1}</p>${saLots.length>1?`<button onclick="rmSA(${i})" style="font-size:10px;color:#a32d2d;background:none;border:none;cursor:pointer;">Remove</button>`:''}</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem;"><div class="cr" style="margin-bottom:0;"><label class="cl" style="font-size:10px;">Qty</label><div class="iu" style="margin:0;"><input class="mi" type="number" id="sa-qty-${i}" value="${lot.qty}" min="1" oninput="uSA()" style="font-size:11px;"></div></div><div class="cr" style="margin-bottom:0;"><label class="cl" style="font-size:10px;">Price</label><div class="iu" style="margin:0;"><span class="iup" style="font-size:10px;">₹</span><input class="mi" type="number" id="sa-price-${i}" value="${lot.price}" min="0.01" step="0.01" oninput="uSA()" style="font-size:11px;"></div></div></div></div>`).join('');
+}
+function addSA(){if(saLots.length<5){saLots.push({qty:100,price:0});renderSA();uSA();}}
+function rmSA(i){saLots.splice(i,1);renderSA();uSA();}
+function uSA(){
+  saLots=saLots.map((_,i)=>({qty:parseFloat(document.getElementById('sa-qty-'+i)?.value)||0,price:parseFloat(document.getElementById('sa-price-'+i)?.value)||0}));
+  const totalQty=saLots.reduce((s,l)=>s+l.qty,0);
+  const totalInv=saLots.reduce((s,l)=>s+l.qty*l.price,0);
+  const avg=totalQty>0?totalInv/totalQty:0;
+  const first=saLots[0]?.price||0;
+  const chg=first>0?((avg-first)/first*100):0;
+  st('sa-avg','₹'+avg.toFixed(2));st('sa-as',`${totalQty} shares`);
+  st('sa-qty',totalQty.toLocaleString('en-IN'));st('sa-inv',fI(totalInv));
+  st('sa-chg',chg.toFixed(2)+'%');st('sa-cs',chg<=0?'avg reduced':'avg increased');
+  document.getElementById('sa-tb').innerHTML=saLots.map((lot,i)=>{const inv=lot.qty*lot.price,pct=totalInv>0?(inv/totalInv*100).toFixed(1):'0';return `<tr style="${i%2?'background:var(--cream);':''}"><td>Lot ${i+1}</td><td class="r">${lot.qty.toLocaleString('en-IN')}</td><td class="r">₹${lot.price.toFixed(2)}</td><td class="r">${fI(inv)}</td><td class="r">${pct}%</td></tr>`;}).join('');
+}
+
+// INIT ALL
+onCat('loan'); document.getElementById('catSel').value='loan';
+uEMI(); u4in1(); uHL(); uCC();
+uCI(); uSI(); uSIP(); uSWP(); uFD(); uPPF(); uROI();
+uTax(); uTDS(); uAdv(); uGST(); uGL(); uHRA();
+uDep(); setBVM('dcf'); uSal(); renderPP(); uPP();
+uRatio(); uBEP(); buildCF(); uCF(); uWC();
+uCG(); uBR(); renderSA(); uSA();
+sv4('emi');
+</script>
+</body>
+</html>
